@@ -71,7 +71,7 @@ Shader "Reflective/Bumped Specular Fresnel"
 		reflcol *= tex.a;
            
 		//reflcol = lerp(c, reflcol, fresnel(worldRefl, _Fresnel));
-		reflcol = lerp(c, reflcol, fresnel(dot(IN.viewDir,o.Normal), _Fresnel));
+		reflcol = lerp(c, reflcol, fresnel(dot(normalize(IN.viewDir),o.Normal), _Fresnel));
      
 		o.Emission = reflcol.rgb * _ReflectColor.rgb;
 		o.Alpha = reflcol.a * _ReflectColor.a;
