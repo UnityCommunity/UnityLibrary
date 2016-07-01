@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEditor;
-using System.Collections;
-using System.Collections.Generic;
 
-// TilemapLayerHelper (wip)
+// TilemapLayerHelper
 // Use PageDown/PageUp to select between tilemap layers
 // First assign tileRoot into the editorwindow field and hit GetTileMaps button
 
@@ -13,6 +11,7 @@ public class TilemapLayerHelper : EditorWindow
     Transform tileRoot;
     GameObject[] tilemapGos;
 
+    bool fadeOtherLayers = false;
     int selectedLayer = 0;
     string[] layerNames = new string[] { "" };
 
@@ -55,7 +54,17 @@ public class TilemapLayerHelper : EditorWindow
                 i++;
             }
         }
+
+        GUI.changed = false;
+        fadeOtherLayers = GUILayout.Toggle(fadeOtherLayers, "Fade other layers");
+
+        if (GUI.changed) // reset tilemap layer colors
+        {
+            SetTileMapLayerColors();
+        }
+
     }
+
 
 
     void OnSceneGUI(SceneView sceneView)
@@ -84,15 +93,35 @@ public class TilemapLayerHelper : EditorWindow
 
 
         Handles.BeginGUI();
+        
         selectedLayer = GUI.SelectionGrid(new Rect(0, 32, 128, 64), selectedLayer, layerNames, 1);
+
+        if (fadeOtherLayers)
+        {
+            SetTileMapLayerColors();
+        }
+
         Handles.EndGUI();
     }
 
+    // make non-selected layers semi-transparent
+    void SetTileMapLayerColors()
+    {
+        for (int i = 0; i < layerNames.Length; i++)
+        {
+            if (i == selectedLayer || !fadeOtherLayers)
+            {
+                tilemapGos[i].GetComponent<TileMap>().color = Color.white;
+            } else {
+                tilemapGos[i].GetComponent<TileMap>().color = Color.white * 0.5f;
+            }
+        }
+
+    }
 
     // helpers
     int Wrap(int i, int i_max)
     {
         return ((i % i_max) + i_max) % i_max;
     }
-
 }
