@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 // Hierarchy icons http://answers.unity3d.com/answers/1113260/view.html
 
@@ -26,7 +27,7 @@ class TileMapHierarchyHelper
         Event e = Event.current;
         if (e.type == EventType.MouseDown && e.button == 0)
         {
-            Vector3 mousePos = Event.current.mousePosition;
+//            Vector3 mousePos = Event.current.mousePosition;
             //Debug.Log(selectionRect);
             //Debug.Log(mousePos);
         }
@@ -39,28 +40,31 @@ class TileMapHierarchyHelper
 
         GameObject go = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
+        //        if (go && Selection.activeGameObject == go && go.GetComponent<TileMap>())
         if (go && go.GetComponent<TileMap>())
         {
             // buttons
             if (GUI.Button(r, upArrow, GUIStyle.none))
             {
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                 MoveInHierarchy(go, -1);
             }
             r.x += 13;
             if (GUI.Button(r, downArrow, GUIStyle.none))
             {
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
                 MoveInHierarchy(go, 1);
             }
 
             // icons
-            r.x = origX-12; // icon at front
+            r.x = origX - 12; // icon at front
             r.y -= 1;
-            GUI.Label(r, go.activeInHierarchy?tilemapIcon:tilemapIconDisabled);
+            GUI.Label(r, go.activeInHierarchy ? tilemapIcon : tilemapIconDisabled);
         }
     }
 
     // http://answers.unity3d.com/answers/807156/view.html
-    static void MoveInHierarchy(GameObject go, int delta) 
+    static void MoveInHierarchy(GameObject go, int delta)
     {
         go.transform.SetSiblingIndex(go.transform.GetSiblingIndex() + delta);
     }
