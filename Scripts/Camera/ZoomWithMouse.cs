@@ -13,7 +13,7 @@ public class ZoomWithMouse : MonoBehaviour
 
         if (mouseScroll!=0)
         {
-            transform.Translate(transform.forward * zoomSpeed * Time.deltaTime, Space.Self);
+            transform.Translate(transform.forward * mouseScroll * zoomSpeed * Time.deltaTime, Space.Self);
         }
     }
 }
