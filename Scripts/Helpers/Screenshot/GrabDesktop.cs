@@ -6,8 +6,7 @@ using Application = UnityEngine.Application;
 using System.Drawing.Imaging;
 
 // Drag windows desktop image using System.Drawing.dll
-// guide on using System.Drawing.dll in unity : http://answers.unity3d.com/answers/253571/view.html *Note the .NET2.0 setting also
-
+// guide on using System.Drawing.dll in unity : http://answers.unity3d.com/answers/253571/view.html
 
 public class GrabDesktop : MonoBehaviour
 {
