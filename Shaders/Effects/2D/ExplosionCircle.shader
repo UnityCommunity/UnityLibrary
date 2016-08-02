@@ -1,4 +1,5 @@
 // source: http://unitycoder.com/blog/2013/08/11/scorched-earth-terrain-wip/
+// reference: http://johnwhigham.blogspot.sg/2011/11/planetary-rings.html
 
 Shader "UnityLibrary/ExplosionCircle" {
   Properties {
