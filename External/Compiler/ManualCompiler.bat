@@ -1,3 +1,5 @@
+REM Better version here: https://github.com/appetizermonster/Unity3D-RecompileDisabler
+
 @echo off
 REM *** THIS IS NOT WORKING YET ***
 REM UnityManualCompiler v0.1
