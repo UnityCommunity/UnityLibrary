@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.TileMap;
 
 // TilemapLayerHelper
 // Use PageDown/PageUp to select between tilemap layers
@@ -42,6 +43,10 @@ public class TilemapLayerHelper : EditorWindow
     void OnDisable()
     {
         SceneView.onSceneGUIDelegate -= this.OnSceneGUI;
+
+        // reset colors on exit
+        fadeOtherLayers = false;
+        SetTileMapLayerColors();
     }
 
     void OnGUI()
@@ -191,8 +196,9 @@ public class TilemapLayerHelper : EditorWindow
                 tilemapGos[i].GetComponent<TileMap>().color = Color.white * 0.5f;
             }
         }
-
     }
+
+
 
     // HELPERS
 
