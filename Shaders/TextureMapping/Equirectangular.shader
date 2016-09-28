@@ -3,6 +3,8 @@
 /*
 * Equirectangular mapping for use with textures such as the ones found here:
 * https://www.flickr.com/groups/equirectangular/
+*
+* No need for a pre-textured sphere, but is not very efficient
 */
 
 Shader "Custom/Equirectangular" {
@@ -12,6 +14,7 @@ Shader "Custom/Equirectangular" {
     }
 
     SubShader{
+        Cull Off //allows seeing a standard unity sphere from inside and outside
         Pass {
             Tags {"LightMode" = "Always"}
 
