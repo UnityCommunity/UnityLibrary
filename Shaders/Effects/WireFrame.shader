@@ -104,6 +104,7 @@ Shader "UnityLibrary/Effects/Wireframe"
 				// Early out if we know we are not on a line segment.
 				if(minDistanceToEdge > 0.9)
 				{
+					// this is color is used for rest of the mesh (not lines)
 					return fixed4(0,0,0,0);
 				}
 
