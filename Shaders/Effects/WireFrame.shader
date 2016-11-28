@@ -1,10 +1,12 @@
-// modified version of "VR/SpatialMapping/Wireframe.shader" from Unity 5.5f2 (added colo, removed stereo support and color by distance)
+// modified version of "VR/SpatialMapping/Wireframe.shader" from Unity 5.5f2
+// added colors, removed stereo support and color by distance
 
 Shader "UnityLibrary/Effects/Wireframe"
 {
 	Properties
 	{
-		_Color ("Tint", Color) = (1,1,1,1)
+		_LineColor ("LineColor", Color) = (1,1,1,1)
+		_FillColor ("FillColor", Color) = (0,0,0,0)
 		_WireThickness ("Wire Thickness", RANGE(0, 800)) = 100
 	}
 
@@ -29,7 +31,6 @@ Shader "UnityLibrary/Effects/Wireframe"
 			struct appdata
 			{
 				float4 vertex : POSITION;
-				UNITY_VERTEX_INPUT_INSTANCE_ID
 			};
 
 			struct v2g
@@ -95,7 +96,8 @@ Shader "UnityLibrary/Effects/Wireframe"
 				triangleStream.Append(o);
 			}
 
-			uniform fixed4 _Color;
+			uniform fixed4 _LineColor;
+			uniform fixed4 _FillColor;
 
 			fixed4 frag (g2f i) : SV_Target
 			{
@@ -104,11 +106,10 @@ Shader "UnityLibrary/Effects/Wireframe"
 				// Early out if we know we are not on a line segment.
 				if(minDistanceToEdge > 0.9)
 				{
-					// this is color is used for rest of the mesh (not lines)
-					return fixed4(0,0,0,0);
+					return _FillColor;
 				}
 
-				return _Color;
+				return _LineColor;
 			}
 			ENDCG
 		}
