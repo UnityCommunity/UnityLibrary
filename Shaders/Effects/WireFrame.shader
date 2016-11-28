@@ -1,5 +1,5 @@
 // modified version of "VR/SpatialMapping/Wireframe.shader" from Unity 5.5f2
-// added colors, removed stereo support and color by distance
+// added colors, discard option, removed stereo support and color by distance
 
 Shader "UnityLibrary/Effects/Wireframe"
 {
@@ -8,7 +8,8 @@ Shader "UnityLibrary/Effects/Wireframe"
 		_LineColor ("LineColor", Color) = (1,1,1,1)
 		_FillColor ("FillColor", Color) = (0,0,0,0)
 		_WireThickness ("Wire Thickness", RANGE(0, 800)) = 100
-	}
+		[MaterialToggle] UseDiscard("Discard Fill", Float) = 1
+ }
 
 	SubShader
 	{
@@ -23,7 +24,7 @@ Shader "UnityLibrary/Effects/Wireframe"
 			#pragma vertex vert
 			#pragma geometry geom
 			#pragma fragment frag
-
+			#pragma multi_compile _ USEDISCARD_ON
 			#include "UnityCG.cginc"
 
 			float _WireThickness;
@@ -45,6 +46,7 @@ Shader "UnityLibrary/Effects/Wireframe"
 				float4 worldSpacePosition : TEXCOORD0;
 				float4 dist : TEXCOORD1;
 			};
+
 			
 			v2g vert (appdata v)
 			{
@@ -106,7 +108,11 @@ Shader "UnityLibrary/Effects/Wireframe"
 				// Early out if we know we are not on a line segment.
 				if(minDistanceToEdge > 0.9)
 				{
+				    #ifdef USEDISCARD_ON
+					discard;
+					#else
 					return _FillColor;
+					#endif
 				}
 
 				return _LineColor;
