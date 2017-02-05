@@ -1,6 +1,6 @@
 // vertex colors shader for mesh
 
-Shader "UnityCommunity/VertexColorMesh"
+Shader "UnityCommunity/Vertex/VertexColorMesh"
 {
 	SubShader
 	{
