@@ -42,7 +42,7 @@ namespace UnityLibrary
         {
             for (int i = 0; i < cameras.Length; i++)
             {
-                // only 1==0 returns true
+                // only returns true when i is 0
                 cameras[i].enabled = (i == 0);
             }
         }
