@@ -2,7 +2,9 @@
 All kinds of scripts, snippets &amp; shaders (mainly collected from forum/answers posts)
 
 ### Getting access
-- PM me your github id in [unity forums](http://forum.unity3d.com/members/mgear.22727/) or by [email](http://i1.wp.com/unitycoder.com/blog/wp-content/uploads/2011/07/mail.jpg), so i'll add you into this organization.
+Send your GitHub id to one of the below ways:
+- [Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
+- support@unitycoder.com
 
 ### TODO / Instructions
 - (To Be Added)
