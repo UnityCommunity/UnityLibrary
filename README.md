@@ -4,7 +4,7 @@ All kinds of scripts, snippets &amp; shaders (mainly collected from forum/answer
 ### Getting access
 Send your GitHub id to one of the below ways:
 - [Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
-- support@unitycoder.com
+- support [at] unitycoder [dot] com
 
 ### TODO / Instructions
 - (To Be Added)
