@@ -1,34 +1,19 @@
-using UnityEditor;
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
 
-// Custom Editor Script Template
-// Place this file into \Unity\Editor\Data\Resources\ScriptTemplates\ - folder
-// Then you can right click over Project window and select Create/C# Editor Script
-// "81a" in the filename is the menu position
+public class #SCRIPTNAME# : EditorWindow {
 
-public class #SCRIPTNAME# : EditorWindow
-{
-    [MenuItem("Window/#SCRIPTNAME#")]
-    static void Init()
-    {
-        var window = (#SCRIPTNAME#)EditorWindow.GetWindow(typeof(#SCRIPTNAME#));
-        window.Show();
-    }
+	// Use this for initialization
+	[MenuItem("Window/#SCRIPTNAME#")]
+	private static void Initialize () {
+		#NOTRIM#
+	}
 
-    void OnGUI()
-    {
-        //TODO: Add other fields
+	// Draw the Window GUI
+	void OnGUI () {
+		#NOTRIM#
+	}
 
-        if (GUILayout.Button("My Button"))
-        {
-            DoSomething();
-        }
-    }
-
-    void DoSomething()
-    {
-        Debug.Log("Do Something!");
-    }
 }
