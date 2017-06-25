@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof (#SCRIPTNAME#))]
+[CanEditMultipleObjects]
 public class #SCRIPTNAME# : Editor {
 
 	// Use this for initialization
