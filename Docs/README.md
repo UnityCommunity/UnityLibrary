@@ -1,6 +1,7 @@
-Idea for the Docs/ folder: Having minimum working example/snippet for common unity methods and classes
+# Docs
+Sometimes we see some missing, outdated or broken documentations, example at Unity official documentation, so we have collected some of them and made a good examples and documentations about them.
 
-Because sometimes documentation is
-- missing examples
-- or they are broken,
-- or they are not showing the most common usage (like getting world position on mouse click with 2D raycast),
+## License
+[MIT](https://github.com/UnityCommunity/UnityLibrary/blob/master/LICENSE.md) @ [Unity Community](https://github.com/UnityCommunity/)
+
+Made with :heart: by [Unity Community](https://github.com/UnityCommunity/)
