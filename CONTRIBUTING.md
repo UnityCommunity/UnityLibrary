@@ -13,7 +13,7 @@
 
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for Atom. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
+This section guides you through submitting a bug report for Unity Library. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
 
 Always add a meaningful title to your bug or issue.
 
