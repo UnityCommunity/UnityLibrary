@@ -1,0 +1,14 @@
+#pragma strict
+
+class #SCRIPTNAME# extends EditorWindow {
+
+	@MenuItem ("Window/#SCRIPTNAME#")
+    static function Initialize () {
+        EditorWindow.GetWindow (#SCRIPTNAME#);
+    }
+
+	function OnGUI () {
+		
+	}
+
+}
