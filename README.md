@@ -19,6 +19,9 @@ Send your GitHub id to one of the below ways:
 ## Improvements/Ideas/Feedback
 Feel free to post your ideas/comments/improvements/recommendations in the issues section https://github.com/UnityCommunity/UnityLibrary/issues
 
+## Credits
+[Check out Unity Community People](https://github.com/orgs/UnityCommunity/people)
+
 ## License
 [MIT](https://github.com/UnityCommunity/UnityLibrary/blob/master/LICENSE.md) @ [Unity Community](https://github.com/UnityCommunity/)
 
