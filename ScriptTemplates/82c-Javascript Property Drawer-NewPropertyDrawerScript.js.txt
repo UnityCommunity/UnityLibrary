@@ -1,0 +1,10 @@
+#pragma strict
+
+@CustomPropertyDrawer (#SCRIPTNAME#)
+class #SCRIPTNAME# extends PropertyDrawer {
+
+	function OnGUI () {
+		
+	}
+
+}
