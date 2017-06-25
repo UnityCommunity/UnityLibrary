@@ -27,6 +27,6 @@ you can find it in the file by **#SCRIPTNAME#** tag.
 [**More information**](https://support.unity3d.com/hc/en-us/articles/210223733-How-to-customize-Unity-script-templates)
 
 ## License
-MIT @ [Unity Community](https://github.com/UnityCommunity/)
+[MIT](https://github.com/UnityCommunity/UnityLibrary/blob/master/LICENSE.md) @ [Unity Community](https://github.com/UnityCommunity/)
 
 Made with :heart: by [Unity Community](https://github.com/UnityCommunity/)
