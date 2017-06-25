@@ -1,0 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+
+[CustomPropertyDrawer (typeof (#SCRIPTNAME#))]
+public class #SCRIPTNAME# : PropertyDrawer {
+
+	// Use this for drawing the GUI
+	void OnGUI (Rect position, SerializedProperty property, GUIContent label) {
+		
+	}
+
+}
