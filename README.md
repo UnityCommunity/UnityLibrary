@@ -15,7 +15,7 @@ We have collected most scripts from external sources like Unity Communities (For
 Send your GitHub id to one of the below ways:
 
 - [Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
-- support@unitycoder.com
+- support [at] unitycoder [.] com
 
 ## Improvements/Ideas/Feedback
 Feel free to post your ideas/comments/improvements/recommendations in the issues section https://github.com/UnityCommunity/UnityLibrary/issues
