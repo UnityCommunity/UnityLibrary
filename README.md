@@ -16,3 +16,8 @@ And then have specific subfolders, like Shaders/Water/..
 
 ### Feedback
 - Feel free to post ideas/comments in the issues section https://github.com/UnityCommunity/UnityLibrary/issues
+
+## License
+[MIT](https://github.com/UnityCommunity/UnityLibrary/blob/master/LICENSE.md) @ [Unity Community](https://github.com/UnityCommunity/)
+
+Made with :heart: by [Unity Community](https://github.com/UnityCommunity/)
