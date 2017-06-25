@@ -9,6 +9,7 @@ We have collected most scripts from external sources like Unity Communities (For
 - [Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Scripts/Editor) : Editor related scripts.
 - [Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Shaders) : Ready-to-use shaders.
 - [ScriptTemplates/](https://github.com/UnityCommunity/UnityLibrary/tree/master/ScriptTemplates) : Contains ready-to-use script templates.
+- [External/](https://github.com/UnityCommunity/UnityLibrary/tree/master/External) : External libaries, scripts and utilities that are related to unity.
 
 ## Join the Community
 Send your GitHub id to one of the below ways:
