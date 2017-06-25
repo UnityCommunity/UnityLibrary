@@ -1,0 +1,15 @@
+#pragma strict
+
+@CustomEditor (#SCRIPTNAME#)
+@CanEditMultipleObjects
+class #SCRIPTNAME# extends Editor {
+
+	function OnEnable () {
+		
+	}
+
+	function OnInspectorGUI () {
+		
+	}
+
+}
