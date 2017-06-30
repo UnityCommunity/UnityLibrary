@@ -11,6 +11,20 @@ We have collected most scripts from external sources like Unity Communities (For
 - [ScriptTemplates/](https://github.com/UnityCommunity/UnityLibrary/tree/master/ScriptTemplates) : Contains ready-to-use script templates.
 - [External/](https://github.com/UnityCommunity/UnityLibrary/tree/master/External) : External libaries, scripts and utilities that are related to unity.
 
+## Resources
+
+Awesome and Useful Unity Resources:
+
+[Awesome Unity](https://github.com/RyanNielson/awesome-unity)
+
+[Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
+
+[Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
+
+[GameDev Resources](https://github.com/Kavex/GameDev-Resources)
+
+[Games On GitHub](https://github.com/leereilly/games/)
+
 ## Join the Community
 Send your GitHub id to one of the below ways:
 
