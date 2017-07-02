@@ -27,6 +27,10 @@ Awesome and Useful Unity Resources:
 
 [:video_game: Games On GitHub](https://github.com/leereilly/games/)
 
+## Contribution
+
+[Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md)
+
 ## Join the Community
 
 Send your GitHub id to one of the below ways:
