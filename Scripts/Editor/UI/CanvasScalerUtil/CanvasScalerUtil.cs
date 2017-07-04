@@ -14,11 +14,11 @@ public class CanvasScalerUtil : MonoBehaviour
     private uint canvasHeight = 600;
 
     [SerializeField]
-    private uint canvasWorldSizeInMeters = 1;
+    private float canvasWorldSizeInMeters = 1;
 
     public uint CanvasWidth { get { return canvasWidth; } }
     public uint CanvasHeight { get { return canvasHeight; } }
-    public uint CanvasWorldSizeInMeters { get { return canvasWorldSizeInMeters; } }
+    public float CanvasWorldSizeInMeters { get { return canvasWorldSizeInMeters; } }
 
     #region MonoBehaviour
     private void Awake()

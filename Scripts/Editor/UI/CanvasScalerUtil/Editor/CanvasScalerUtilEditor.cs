@@ -18,9 +18,7 @@ public class CanvasScalerUtilEditor : Editor
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
-
         if (GUILayout.Button("Scale Canvas")) ScaleCanvas();
-
     }
 
     private void ScaleCanvas()
@@ -29,7 +27,7 @@ public class CanvasScalerUtilEditor : Editor
         RectTransform rectTransform = t.GetComponent<RectTransform>();
 
         Vector2 sizeDelta = new Vector2(t.CanvasWidth, t.CanvasHeight);
-        Vector3 scale = t.CanvasWorldSizeInMeters / (float) t.CanvasWidth * Vector3.one;
+        Vector3 scale = t.CanvasWorldSizeInMeters / t.CanvasWidth * Vector3.one;
 
         if (canvas.renderMode != RenderMode.WorldSpace)
         {
