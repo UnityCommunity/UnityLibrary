@@ -37,6 +37,7 @@ Send your GitHub id to one of the below ways:
 
 - [Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
 - support [at] unitycoder [.] com
+- hasanbayat1393@gmail.com
 
 ## Improvements/Ideas/Feedback
 
