@@ -41,7 +41,7 @@ Send your GitHub id to one of the below ways:
 
 ## Improvements/Ideas/Feedback
 
-Feel free to post your ideas/comments/improvements/recommendations in the issues section https://github.com/UnityCommunity/UnityLibrary/issues
+Feel free to [Post your ideas/comments/improvements/recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
 
 ## Credits
 
