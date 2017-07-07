@@ -1,8 +1,26 @@
 # Unity Library
 
-Useful scripts, snippets and shaders here it is gathered.
+:tada: Welcome to Unity Library :tada:
+
+Useful scripts, snippets and shaders here it is gathered for free.
 
 We have collected most scripts from external sources like Unity Communities (Forums, Answers) and we made it ourselves a little.
+
+## Getting Started
+
+This repository contains all kind of utilities for Unity from scripts to shaders.
+
+You can [browse this repository](#content) and find your desired utility or you can [clone this repository](https://help.github.com/articles/cloning-a-repository/) and browse the files:
+
+```bash
+git clone https://github.com/UnityCommunity/UnityLibrary.git
+```
+
+or you can find useful stuff by [browsing awesome resources in the below](#resources).
+
+[:sparkles: Contribution is Welcome](#contribution)
+
+[:fire: Join the Community](#join-the-community)
 
 ## Content
 
