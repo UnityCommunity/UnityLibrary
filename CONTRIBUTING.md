@@ -7,6 +7,7 @@
 [How Can I Contribute?](#how-can-i-contribute)
   - [Reporting Bugs](#reporting-bugs)
   - [Adding Content to Wiki](#adding-content-to-wiki)
+  - [Adding Content to Library](#adding-content-to-library)
   - [Making Pull Requests](#making-pull-requests)
 
 ## How Can I Contribute?
@@ -32,6 +33,8 @@ Always check the library to make sure you aren't adding a duplicate.
 Always test your utitlity to make sure it works as expected and is error free.
 
 Also you can make a new folder in the relevant category for your utility and include a README.md file for that to provide documentation and usage guideline.
+
+New Category suggestion is welcome.
 
 ### Making Pull Requests
 
