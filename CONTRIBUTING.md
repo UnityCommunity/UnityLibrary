@@ -13,18 +13,28 @@
 
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for Unity Library. Following these guidelines helps maintainers and the community understand your report :pencil:, reproduce the behavior :computer: :computer:, and find related reports :mag_right:.
+You can test the existing utitlties and report us the bugs/improvements/ideas.
 
-Always add a meaningful title to your bug or issue.
-
-> **Note**: If you find a **Closed** issue that seems like it is the same thing that you're experiencing, open a new issue and include a link to the original issue in the body of your new one.
-
-If you have experienced any problems with the scripts and content that Unity Library provides, you can submit them to us at [Unity Library Issues Section](https://github.com/UnityCommunity/UnityLibrary/issues)
+Always add a meaningful title to your issue.
 
 ### Adding Content to Wiki
 
-Also you can add content to [Unity Library Wiki](https://github.com/UnityCommunity/UnityLibrary/wiki) but always provide a full and complete content not a partial and error container.
+You add tutorials and usage guideline for your content or existing content at [Wiki](https://github.com/UnityCommunity/UnityLibrary/wiki)
+
+Always add a good and meaningful title and content.
+
+### Adding Content to Library
+
+You can add your own content and utilities to the library by [making pull requests](https://github.com/UnityCommunity/UnityLibrary/pulls).
+
+Always check the library to make sure you aren't adding a duplicate.
+
+Always test your utitlity to make sure it works as expected and is error free.
+
+Also you can make a new folder in the relevant category for your utility and include a README.md file for that to provide documentation and usage guideline.
 
 ### Making Pull Requests
 
-You can submit your [Pull Requests](https://github.com/UnityCommunity/UnityLibrary/pulls) to us and we will merge them when they are ready. always add a meaningful pull request title.
+You can submit your [Pull Requests](https://github.com/UnityCommunity/UnityLibrary/pulls) to us and we will merge them when they are ready.
+
+Always add a meaningful pull request title.
