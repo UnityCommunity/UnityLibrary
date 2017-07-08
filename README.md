@@ -47,23 +47,23 @@ Awesome and Useful Unity Resources:
 
 ## Contribution
 
-[Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md)
+[:closed_book: Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md)
 
 ## Join the Community
 
 Send your GitHub id to one of the below ways:
 
-- [Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
+- [:speech_balloon: Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
 - support [at] unitycoder [.] com
-- hasanbayat1393@gmail.com
+- [:e-mail: hasanbayat1393@gmail.com](mailto:hasanbayat1393@gmail.com)
 
 ## Improvements/Ideas/Feedback
 
-Feel free to [Post your ideas/comments/improvements/recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
+Feel free to [:postbox: Post your ideas/comments/improvements/recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
 
 ## Credits
 
-[Find out Unity Community People](https://github.com/orgs/UnityCommunity/people)
+[:mag: Find out Unity Community People](https://github.com/orgs/UnityCommunity/people)
 
 ## License
 
