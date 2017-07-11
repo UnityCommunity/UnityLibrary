@@ -53,8 +53,8 @@ Awesome and Useful Unity Resources:
 
 Send your GitHub id to one of the below ways:
 
-- [:speech_balloon: Unity Forums](http://forum.unity3d.com/members/mgear.22727/)
-- support [at] unitycoder [.] com
+- [:speech_balloon: Unity Forums](https://forum.unity3d.com/conversations/add?to=mgear) <sup><i>*Private message</i></sup>
+- Signup using [Google Forms](https://goo.gl/forms/DFspn3ByJBoLWEth2) <sup><i>*Can take few days until processed</i></sup>
 - [:e-mail: hasanbayat1393@gmail.com](mailto:hasanbayat1393@gmail.com)
 
 ## Improvements/Ideas/Feedback
