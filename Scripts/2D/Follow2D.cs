@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,29 +14,45 @@ using UnityEngine;
 /// TODO: Add Acceleration Follow
 /// </summary>
 public class Follow2D : MonoBehaviour {
-    public enum FollowType {  MoveTowards, Lerp, Slerp, SmoothDamp, Acceleration}
 
+    public enum FollowType {
+	    MoveTowards, 
+	    Lerp, 
+	    Slerp, 
+	    SmoothDamp, 
+	    Acceleration
+	}
+
+	#region Fields
+		
     public Transform target;
     public FollowType followType = FollowType.MoveTowards;
     public Vector2 speed;
     public Vector2 time;
-
     public Vector2 offset;
-
     public bool bounds;
     public Vector2 lowerBounds;
     public Vector2 higherBounds;
-    
-
-    private Vector2 velocity;
-    private Vector2 step;
-	// Use this for initialization
-	void Start () {
+	
+	#endregion
 		
-	}
+	#region Variables
+		
+    protected Vector2 velocity;
+    protected Vector2 step;
+	
+	#endregion
+		
+	#region MonoBehaviour Messages
 
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
+		
+		// Exit if the target object not specified
+		if (target == null) {
+			return;
+		}
+		
         switch (followType)
         {
             case FollowType.MoveTowards:
@@ -61,26 +77,32 @@ public class Follow2D : MonoBehaviour {
             CheckForBounds();
         }
     }
+	
+	#endregion
+		
+	#region Methods
 
-    void MoveTowards()
+    protected virtual void MoveTowards()
     {
         step = speed * Time.deltaTime;
         transform.position = new Vector2(Vector2.MoveTowards(transform.position, (Vector2)target.position+offset, step.x).x, Vector2.MoveTowards(transform.position, (Vector2)target.position+offset, step.x).y);
     }
-    void Lerp()
+	
+    protected virtual void Lerp()
     {
         float  posX = Mathf.Lerp(transform.position.x, target.position.x+offset.x, time.x* Time.fixedDeltaTime);
         float posY = Mathf.Lerp(transform.position.y, target.position.y + offset.y, time.y * Time.fixedDeltaTime);
         transform.position = new Vector3(posX, posY, transform.position.z);
     }
-    void Slerp()
+	
+    protected virtual void Slerp()
     {
         float posX = Vector3.Slerp(transform.position, (Vector3)((Vector2)target.position + offset), time.x*Time.fixedDeltaTime).x;
         float posY = Vector3.Slerp(transform.position, (Vector3)((Vector2)target.position + offset), time.y * Time.fixedDeltaTime).y;
         transform.position = new Vector3(posX, posY, transform.position.z);
     }
 
-    void SmoothDamp()
+    protected virtual void SmoothDamp()
     {
         Vector2 position;
 
@@ -90,8 +112,11 @@ public class Follow2D : MonoBehaviour {
         transform.position = new Vector3(position.x, position.y, transform.position.z);
     }
 
-    void CheckForBounds()
+    protected virtual void CheckForBounds()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, lowerBounds.x, higherBounds.x), Mathf.Clamp(transform.position.y, lowerBounds.y, higherBounds.y), transform.position.z);
     }
+	
+	#endregion
+	
 }
