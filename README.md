@@ -8,11 +8,11 @@ We have collected most scripts from external sources like Unity Communities (For
 
 ## Call for Help
 
-[Help us update our old scripts](https://github.com/UnityCommunity/UnityLibrary/issues/15)
+[:star: Help us update our old scripts](https://github.com/UnityCommunity/UnityLibrary/issues/15)
 
-[Help us update our old shaders](https://github.com/UnityCommunity/UnityLibrary/issues/14)
+[:star2: Help us update our old shaders](https://github.com/UnityCommunity/UnityLibrary/issues/14)
 
-You can post the old scripts, shaders, ... names to us and we will update them.
+You can post the old scripts, shaders, ... names to us and we will update them, or you can update them yourself and make a pull request.
 
 ## Getting Started
 
