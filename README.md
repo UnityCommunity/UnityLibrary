@@ -6,6 +6,14 @@ Useful scripts, snippets and shaders here it is gathered for free.
 
 We have collected most scripts from external sources like Unity Communities (Forums, Answers) and we made it ourselves a little.
 
+## Call for Help
+
+[Help us update our old scripts](https://github.com/UnityCommunity/UnityLibrary/issues/15)
+
+[Help us update our old shaders](https://github.com/UnityCommunity/UnityLibrary/issues/14)
+
+You can post the old scripts, shaders, ... names to us and we will update them.
+
 ## Getting Started
 
 This repository contains all kind of utilities for Unity from scripts to shaders.
