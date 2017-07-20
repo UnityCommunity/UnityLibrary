@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // source: https://forum.unity3d.com/threads/depth-shader-invert-it.12692/#post-89430
 // lerp 2 colors between camera NearClipPlane to FarClipPlane
 
@@ -33,7 +35,7 @@ Shader "UnityCommunity/Debug/LerpColorNearToFarPlane"
 			v2f vert(appdata v) 
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				float depth;
 				COMPUTE_EYEDEPTH(depth);
 				float factor = depth * _ProjectionParams.w;

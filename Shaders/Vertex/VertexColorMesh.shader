@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // vertex colors shader for mesh
 
 Shader "UnityCommunity/Vertex/VertexColorMesh"
@@ -30,7 +32,7 @@ Shader "UnityCommunity/Vertex/VertexColorMesh"
 			v2f vert (appdata v)
 			{
 				v2f o;
-				o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.pos = UnityObjectToClipPos(v.vertex);
 				o.color = v.color;
 				return o;
 			}

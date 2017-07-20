@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 //from https://forum.unity3d.com/threads/what-is-wrong-with-unitys-spherical-mapping-how-to-fix-it.321205/
 
 /*
@@ -41,7 +43,7 @@ Shader "Custom/Equirectangular" {
                 v2f vert (appdata v)
                 {
                     v2f o;
-                    o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                    o.pos = UnityObjectToClipPos(v.vertex);
                     o.normal = v.normal;
                     return o;
                 }

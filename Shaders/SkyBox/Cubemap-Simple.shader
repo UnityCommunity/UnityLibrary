@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // simplified skybox shader (unity 5.3.x)
 // removed tint, rotation, exposure, HDR calculation
 
@@ -30,7 +32,7 @@ Shader "UnityLibrary/Skybox/Cubemap-Simple"
 			v2f vert (appdata_t v)
 			{
 				v2f o;
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.texcoord = v.vertex.xyz;
 				return o;
 			}

@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // source: http://forum.unity3d.com/threads/tangent-space-normal-map-seams-problem-fixed.384063/#post-2496937
 
 Shader "Custom/DebugNormalsTangents" {
@@ -35,7 +37,7 @@ SubShader {
             v2f vert (appdata_tan v)
             {
                 v2f o;
-                o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+                o.vertex = UnityObjectToClipPos(v.vertex);
                 o.texcoord = v.texcoord;
  
                 half3 wNormal = UnityObjectToWorldNormal(v.normal);
