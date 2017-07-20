@@ -32,6 +32,8 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 
 [:door: Join our Slack Channel](https://join.slack.com/t/unitylibrary/shared_invite/MjE1MDA2NzExNDEwLTE1MDA0OTE5NzktOGJmYTI0ZDlkNA)
 
+[:door: Join our Gitter Channel](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+
 ## Content
 
 - [Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Docs) : A small replacement for missing Unity documentations.
