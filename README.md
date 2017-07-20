@@ -49,6 +49,8 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 
 Awesome and Useful Unity Resources:
 
+[:white_check_mark: Check out our Development Board](https://trello.com/b/1sOcvQzd/unity-library)
+
 [:sparkles: Awesome Unity](https://github.com/RyanNielson/awesome-unity)
 
 [:clipboard: Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
