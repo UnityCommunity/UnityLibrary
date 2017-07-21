@@ -30,12 +30,6 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 
 [:fire: Join the Community](#join-the-community)
 
-[:door: Join our Slack Channel](https://join.slack.com/t/unitylibrary/shared_invite/MjE1MDA2NzExNDEwLTE1MDA0OTE5NzktOGJmYTI0ZDlkNA)
-
-[:door: Join our Gitter Channel](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-
-[:door: Join our Discord Channel](https://discord.gg/cXT97hU)
-
 ## Content
 
 - [Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Docs) : A small replacement for missing Unity documentations.
@@ -48,8 +42,6 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 ## Resources
 
 Awesome and Useful Unity Resources:
-
-[:white_check_mark: Check out our Development Board](https://trello.com/b/1sOcvQzd/unity-library)
 
 [:sparkles: Awesome Unity](https://github.com/RyanNielson/awesome-unity)
 
@@ -72,6 +64,13 @@ Send your GitHub id to one of the below ways:
 - [:speech_balloon: Unity Forums](https://forum.unity3d.com/conversations/add?to=mgear) <sup><i>*Private message</i></sup>
 - Signup using [Google Forms](https://goo.gl/forms/DFspn3ByJBoLWEth2) <sup><i>*Can take few days until processed</i></sup>
 - [:e-mail: hasanbayat1393@gmail.com](mailto:hasanbayat1393@gmail.com)
+
+Our communities:
+
+- [Join our Slack Channel](https://join.slack.com/t/unitylibrary/shared_invite/MjE1MDA2NzExNDEwLTE1MDA0OTE5NzktOGJmYTI0ZDlkNA)
+- [Join our Gitter Channel](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+- [Join our Discord Channel](https://discord.gg/cXT97hU)
+- [Development Board](https://trello.com/b/1sOcvQzd/unity-library)
 
 ## Improvements/Ideas/Feedback
 
