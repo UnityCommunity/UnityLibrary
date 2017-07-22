@@ -75,7 +75,7 @@ class TileMapHierarchyHelper
     }
 }
 #else
-public class RandomTiles : MonoBehaviour
+public class TileMapHierarchyHelper : MonoBehaviour
 {
     public void Start()
     {
