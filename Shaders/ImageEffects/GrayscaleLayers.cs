@@ -4,8 +4,11 @@ using UnityEngine;
 // Grayscale effect, with added ExcludeLayer option
 // Usage: Attach this script to camera, Select excludeLayers, Set your excluded objects to that layer
 
+
+#if !UNITY_5_3_OR_NEWER
 namespace UnityStandardAssets.ImageEffects
 {
+
     [ExecuteInEditMode]
     [AddComponentMenu("Image Effects/Color Adjustments/Grayscale")]
     public class GrayscaleLayers : ImageEffectBase
@@ -72,3 +75,4 @@ namespace UnityStandardAssets.ImageEffects
         }
     }
 }
+#endif

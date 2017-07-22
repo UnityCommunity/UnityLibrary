@@ -12,12 +12,12 @@ public class SpriteBackgroundRemover : EditorWindow
     Texture2D img;
     Texture2D newImg;
     Color colorToRemove = Color.magenta;
-    public static SpriteBackgroundRemove win;
+    public static SpriteBackgroundRemover win;
 
     [MenuItem("Window/Tools/Alpha-fy Images")]
     static void Init()
     {
-        win = ScriptableObject.CreateInstance(typeof(SpriteBackgroundRemove)) as SpriteBackgroundRemove;
+        win = ScriptableObject.CreateInstance(typeof(SpriteBackgroundRemover)) as SpriteBackgroundRemover;
         win.minSize = new Vector2(300, 350);
         win.ShowUtility();
     }

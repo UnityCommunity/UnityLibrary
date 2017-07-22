@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.TileMap;
+
+#if UNITY_2017_2_OR_NEWER 
+using UnityEngine.Tilemaps;
+
+//Requires Unity 2017.2 or newer
 
 // TilemapLayerHelper
 // Use PageDown/PageUp to select between tilemap layers
@@ -57,7 +61,7 @@ public class TilemapLayerHelper : EditorWindow
         if (GUI.changed && tileRoot)
         {
             // get list of tilemap layers
-            var childTileMaps = tileRoot.GetComponentsInChildren<TileMap>();
+            var childTileMaps = tileRoot.GetComponentsInChildren<Tilemap>();
             layerNames = new string[childTileMaps.Length];
             tilemapGos = new GameObject[childTileMaps.Length];
 
@@ -191,9 +195,9 @@ public class TilemapLayerHelper : EditorWindow
         {
             if (i == selectedLayer || !fadeOtherLayers)
             {
-                tilemapGos[i].GetComponent<TileMap>().color = Color.white;
+                tilemapGos[i].GetComponent<Tilemap>().color = Color.white;
             } else {
-                tilemapGos[i].GetComponent<TileMap>().color = Color.white * 0.5f;
+                tilemapGos[i].GetComponent<Tilemap>().color = Color.white * 0.5f;
             }
         }
     }
@@ -208,3 +212,12 @@ public class TilemapLayerHelper : EditorWindow
         return ((i % i_max) + i_max) % i_max;
     }
 }
+#else
+public class TilemapLayerHelper : MonoBehaviour
+{
+    public void Start()
+    {
+        Debug.LogWarning("This version of unity doesnt support UnityEngine.Tilemaps");
+    }
+}
+#endif

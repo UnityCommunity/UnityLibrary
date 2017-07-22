@@ -3,7 +3,9 @@ using UnityEngine;
 
 // Usage: Place this file into /Standard Assets/Effects/ImageEffects/Scripts/-folder
 // Requires: https://github.com/UnityCommunity/UnityLibrary/blob/master/Scripts/Editor/ImageEffects/ColorCorrectionCurvesEditorLayers
+// Deprecated for the post-processing stack
 
+#if !UNITY_5_3_OR_NEWER
 namespace UnityStandardAssets.ImageEffects
 {
     [ExecuteInEditMode]
@@ -58,7 +60,7 @@ namespace UnityStandardAssets.ImageEffects
         private Camera _camera;
 
 
-        new void Start ()
+        void Start ()
 		{
             base.Start ();
             updateTexturesOnStartup = true;
@@ -230,3 +232,4 @@ namespace UnityStandardAssets.ImageEffects
         }
     }
 }
+#endif

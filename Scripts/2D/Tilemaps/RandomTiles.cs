@@ -1,10 +1,12 @@
 // tested with unity version: 2017.2.0b4
 // info: Fills tilemap with random tiles
 // usage: Attach this script to empty gameobject, assign some tiles, then press play
+// please make sure that you have at least version 2017.2 or the experimental 2d unity 5_5
+// https://forum.unity3d.com/threads/update-july-2017.484397/
 
 using UnityEngine;
+#if UNITY_2017_2_OR_NEWER
 using UnityEngine.Tilemaps;
-
 namespace UnityLibary
 {
     public class RandomTiles : MonoBehaviour
@@ -34,7 +36,8 @@ namespace UnityLibary
                 var go = new GameObject("grid");
                 go.AddComponent<Grid>();
                 transform.SetParent(go.transform);
-            } else
+            }
+            else
             {
                 if (parent.GetComponent<Grid>() == null)
                 {
@@ -69,3 +72,12 @@ namespace UnityLibary
         }
     }
 }
+#else
+public class RandomTiles : MonoBehaviour
+{
+    public void Start()
+    {
+        Debug.LogWarning("This version of unity doesnt support UnityEngine.Tilemaps");
+    }
+}
+#endif

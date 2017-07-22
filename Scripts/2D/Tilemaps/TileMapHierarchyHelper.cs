@@ -1,11 +1,16 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+
 // Hierarchy icons http://answers.unity3d.com/answers/1113260/view.html
 
 // displays icons for tilemaps in hierarchy
 // adds up/down arrows for tilemap layers (to arrange them up or down)
+//requires unity 2017.2 or newer
 
+
+#if UNITY_2017_2_OR_NEWER 
+using UnityEngine.Tilemaps;
 [InitializeOnLoad]
 class TileMapHierarchyHelper
 {
@@ -40,8 +45,8 @@ class TileMapHierarchyHelper
 
         GameObject go = EditorUtility.InstanceIDToObject(instanceID) as GameObject;
 
-        //        if (go && Selection.activeGameObject == go && go.GetComponent<TileMap>())
-        if (go && go.GetComponent<TileMap>())
+        //        if (go && Selection.activeGameObject == go && go.GetComponent<Tilemap>())
+        if (go && go.GetComponent<Tilemap>())
         {
             // buttons
             if (GUI.Button(r, upArrow, GUIStyle.none))
@@ -69,3 +74,12 @@ class TileMapHierarchyHelper
         go.transform.SetSiblingIndex(go.transform.GetSiblingIndex() + delta);
     }
 }
+#else
+public class RandomTiles : MonoBehaviour
+{
+    public void Start()
+    {
+        Debug.LogWarning("This version of unity doesnt support UnityEngine.Tilemaps");
+    }
+}
+#endif

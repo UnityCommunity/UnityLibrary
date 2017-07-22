@@ -9,7 +9,7 @@ namespace UnityLibrary
     {
         void OnEnable()
         {
-            var cam = Getcomponent<Camera>();
+            var cam = GetComponent<Camera>();
             if (cam!=null)
             {
               // enable camera depth texture
