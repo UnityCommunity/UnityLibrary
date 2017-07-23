@@ -33,9 +33,9 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 ## Content
 
 - [Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Docs) : A small replacement for missing Unity documentations.
-- [Scripts/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts) : Complete set of Unity scripts.
-- [Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Editor) : Editor related scripts.
-- [Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Shaders) : Ready-to-use shaders.
+- [Assets/Scripts/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts) : Complete set of Unity scripts.
+- [Assets/Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Editor) : Editor related scripts.
+- [Assets/Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Shaders) : Ready-to-use shaders.
 - [ScriptTemplates/](https://github.com/UnityCommunity/UnityLibrary/tree/master/ScriptTemplates) : Contains ready-to-use script templates.
 - [External/](https://github.com/UnityCommunity/UnityLibrary/tree/master/External) : External libaries, scripts and utilities that are related to unity.
 
@@ -55,7 +55,11 @@ Awesome and Useful Unity Resources:
 
 ## Contribution
 
-[:closed_book: Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md)
+Any contribution to this repository are welcome.
+
+Also you [join as a member](#join-the-community) to do more stuff such as creating new repositories for more awesome open source works.
+
+[:closed_book: Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md) to find a way to help.
 
 ## Join the Community
 
@@ -67,10 +71,10 @@ Send your GitHub id to one of the below ways:
 
 Our communities:
 
-- [Join our Slack Channel](https://join.slack.com/t/unitylibrary/shared_invite/MjE1MDA2NzExNDEwLTE1MDA0OTE5NzktOGJmYTI0ZDlkNA)
-- [Join our Gitter Channel](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-- [Join our Discord Channel](https://discord.gg/cXT97hU)
-- [Development Board](https://trello.com/b/1sOcvQzd/unity-library)
+- [See](https://unitylibrary.slack.com/) | [Join](https://join.slack.com/t/unitylibrary/shared_invite/MjE1MDA2NzExNDEwLTE1MDA0OTE5NzktOGJmYTI0ZDlkNA) our Slack Channel
+- [See](https://gitter.im/UnityCommunity/Lobby) | [Join](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) our Gitter Channel
+- [See](https://discordapp.com/channels/337579253866692608/337579253866692608) | [Join](https://discord.gg/cXT97hU) our Discord Channel
+- [See](https://trello.com/b/1sOcvQzd/unity-library) | [Join](https://trello.com/invite/b/SIfiVLYi/2c640a78d533382340567e625708c9e0/unity-library) our Trello Development Board
 
 ## Improvements/Ideas/Feedback
 
@@ -78,7 +82,15 @@ Feel free to [:postbox: Post your ideas/comments/improvements/recommendations](h
 
 ## Credits
 
-[:mag: Find out Unity Community People](https://github.com/orgs/UnityCommunity/people)
+- [UnityCoder (mika)](https://github.com/unitycoder) (Owner)
+- [EmpireWorld (Hasan Bayat)](https://github.com/EmpireWorld) (Owner)
+- [Lootheo (Manuel Otheo)](https://github.com/Lootheo) (Member)
+- [igorrafael (Igor Rafael de Sousa)](https://github.com/igorrafael) (Member)
+- [nrlnd](https://github.com/nrlnd) (Member)
+- [Sacristan (Ģirts Ķesteris)](https://github.com/nrlnd) (Member)
+- [:sparkles: Join the team](#join-the-community)
+
+[:mag: Check out Unity Community People](https://github.com/orgs/UnityCommunity/people)
 
 ## License
 
