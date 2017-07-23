@@ -33,9 +33,9 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 ## Content
 
 - [Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Docs) : A small replacement for missing Unity documentations.
-- [Scripts/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Scripts) : Complete set of Unity scripts.
-- [Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Scripts/Editor) : Editor related scripts.
-- [Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Shaders) : Ready-to-use shaders.
+- [Scripts/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts) : Complete set of Unity scripts.
+- [Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Editor) : Editor related scripts.
+- [Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Shaders) : Ready-to-use shaders.
 - [ScriptTemplates/](https://github.com/UnityCommunity/UnityLibrary/tree/master/ScriptTemplates) : Contains ready-to-use script templates.
 - [External/](https://github.com/UnityCommunity/UnityLibrary/tree/master/External) : External libaries, scripts and utilities that are related to unity.
 
