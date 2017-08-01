@@ -1,5 +1,5 @@
 /*
- * Version: 2.3
+ * Version: 2.4
  * Fork from the original script: https://pastebin.com/LzEHNB6U
  * Purpose: Download new versions of Unity (alpha, beta,
  *          patches and releases) straight from the Editor.
@@ -54,30 +54,30 @@ public class HelpLastRelease : EditorWindow {
     const float minWidth = 162f;
     [SerializeField]
     private Vector2 scroll;
-    static Dictionary<string, Color> colors = new Dictionary<string, Color>() {
-        { "5.0.", new Color(0.925f, 0.937f, 0.945f ,1f) },
-        { "5.1.", new Color(0.812f, 0.847f, 0.863f, 1f) },
-        { "5.2.", new Color(0.690f, 0.745f, 0.773f, 1f) },
-        { "5.3.", new Color(0.565f, 0.643f, 0.682f, 1f) },
-        { "5.4.", new Color(0.471f, 0.565f, 0.612f, 1f) },
-        { "5.5.", new Color(0.376f, 0.490f, 0.545f, 1f) },
-        { "5.6.", new Color(0.329f, 0.431f, 0.478f, 1f) },
-        { "2017.1.", new Color(0.271f, 0.353f, 0.392f, 1f) },
-        { "2017.2.", new Color(0.216f, 0.278f, 0.31f, 1f) },
-        { "2017.3.", new Color(0.149f, 0.196f, 0.22f, 1f) }
+    static Dictionary<string, Color32> colors = new Dictionary<string, Color32>() {
+        { "5.0.", new Color32(236, 239, 241 ,255) },
+        { "5.1.", new Color32(207, 216, 220, 255) },
+        { "5.2.", new Color32(176, 190, 197, 255) },
+        { "5.3.", new Color32(144, 164, 174, 255) },
+        { "5.4.", new Color32(120, 144, 156, 255) },
+        { "5.5.", new Color32(96, 125, 139, 255) },
+        { "5.6.", new Color32(84, 110, 122, 255) },
+        { "2017.1.", new Color32(69, 90, 100, 255) },
+        { "2017.2.", new Color32(55, 71, 79, 255) },
+        { "2017.3.", new Color32(38, 50, 56, 255) }
     };
 
-    static Dictionary<string, Color> textColors = new Dictionary<string, Color>() {
-        { "5.0.", new Color(0f, 0f, 0f, 1f) },
-        { "5.1.", new Color(0f, 0f, 0f, 1f) },
-        { "5.2.", new Color(0f, 0f, 0f, 1f) },
-        { "5.3.", new Color(0f, 0f, 0f, 1f) },
-        { "5.4.", new Color(1f, 1f, 1f, 1f) },
-        { "5.5.", new Color(1f, 1f, 1f, 1f) },
-        { "5.6.", new Color(1f, 1f, 1f, 1f) },
-        { "2017.1.", new Color(1f, 1f, 1f, 1f) },
-        { "2017.2.", new Color(1f, 1f, 1f, 1f) },
-        { "2017.3.", new Color(1f, 1f, 1f, 1f) }
+    static Dictionary<string, Color32> textColors = new Dictionary<string, Color32>() {
+        { "5.0.", new Color32(0, 0, 0, 255) },
+        { "5.1.", new Color32(0, 0, 0, 255) },
+        { "5.2.", new Color32(0, 0, 0, 255) },
+        { "5.3.", new Color32(0, 0, 0, 255) },
+        { "5.4.", new Color32(255, 255, 255, 255) },
+        { "5.5.", new Color32(255, 255, 255, 255) },
+        { "5.6.", new Color32(255, 255, 255, 255) },
+        { "2017.1.", new Color32(255, 255, 255, 255) },
+        { "2017.2.", new Color32(255, 255, 255, 255) },
+        { "2017.3.", new Color32(255, 255, 255, 255) }
     };
 
     [MenuItem("Help/Links/Statistics")]
@@ -181,16 +181,16 @@ public class HelpLastRelease : EditorWindow {
         EditorGUILayout.EndHorizontal();
     }
 
-    static Color GetGUIColor(int i) {
+    static Color32 GetGUIColor(int i) {
         foreach(var k in colors.Keys) {
             if(currentList.Values[i].Contains(k)) {
                 return colors[k];
             }
         }
-        return Color.white;
+        return new Color32(255,255,255,255);
     }
 
-    static Color GetGUITextColor(int i)
+    static Color32 GetGUITextColor(int i)
     {
         foreach (var k in textColors.Keys)
         {
@@ -199,7 +199,7 @@ public class HelpLastRelease : EditorWindow {
                 return textColors[k];
             }
         }
-        return Color.black;
+        return new Color32(0, 0, 0, 255);
     }
 
     void OnEnable() {
