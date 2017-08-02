@@ -7,7 +7,7 @@ using UnityEngine;
 /// Follows a GameObject in a Smooth way and with various settings
 /// Author: Manuel Otheo (@Lootheo) with guidance from Hasan Bayat (EmpireWorld)
 /// 
-/// 
+/// https://www.reddit.com/r/Unity3D/comments/6iskah/movetowards_vs_lerp_vs_slerp_vs_smoothdamp/
 /// How to use: Attach it to a GameObject and then assign the target to follow and the variables like offset and speed
 /// If it's not moving check the speed
 /// 
@@ -33,17 +33,18 @@ public class Follow2D : MonoBehaviour {
     public bool bounds;
     public Vector2 lowerBounds;
     public Vector2 higherBounds;
-	
-	#endregion
-		
-	#region Variables
-		
+    public Vector2 acceleration;
+    #endregion
+
+    #region Variables
+
     protected Vector2 velocity;
     protected Vector2 step;
-	
-	#endregion
-		
-	#region MonoBehaviour Messages
+    private Vector2 localSpeed;
+
+    #endregion
+
+    #region MonoBehaviour Messages
 
     protected virtual void FixedUpdate()
     {
@@ -68,7 +69,7 @@ public class Follow2D : MonoBehaviour {
                 SmoothDamp();
                 break;
             case FollowType.Acceleration:
-                
+                Acceleration();
                 break;
         }
 
@@ -110,6 +111,17 @@ public class Follow2D : MonoBehaviour {
         position.y = Mathf.SmoothDamp(transform.position.y, target.position.y+offset.y, ref velocity.y, time.y);
 
         transform.position = new Vector3(position.x, position.y, transform.position.z);
+    }
+    protected virtual void Acceleration()
+    {
+        if (Vector2.Distance(transform.position, (Vector2)target.position + offset) == 0)
+            localSpeed = Vector2.zero;
+        else
+        {
+            localSpeed = localSpeed + acceleration * Time.deltaTime;
+            step = localSpeed * Time.deltaTime;
+            transform.position = new Vector2(Vector2.MoveTowards(transform.position, (Vector2)target.position + offset, step.x).x, Vector2.MoveTowards(transform.position, (Vector2)target.position + offset, step.x).y);
+        }
     }
 
     protected virtual void CheckForBounds()
