@@ -20,6 +20,7 @@ using System.Runtime.InteropServices;
 //using System.Windows.Forms.Screen;
 //using System.Drawing;
 //using System.Drawing.Imaging;
+namespace UnityLibrary{
 public class GrabDesktop : MonoBehaviour
 {
     [DllImport("kernel32", SetLastError = true)]
@@ -51,5 +52,6 @@ public class GrabDesktop : MonoBehaviour
         }
         
     }
+}
 }
 */

@@ -5,39 +5,42 @@ using UnityEditor;
 /// Author: Girts Kesteris 2017
 /// Script to hastily create correct canvas scales. Logic handled at editor's side
 /// </summary>
-[CustomEditor(typeof(CanvasScalerUtil))]
-public class CanvasScalerUtilEditor : Editor
+namespace UnityLibrary
 {
-    CanvasScalerUtil t;
-
-    private void OnEnable()
+    [CustomEditor(typeof(CanvasScalerUtil))]
+    public class CanvasScalerUtilEditor : Editor
     {
-        t = (CanvasScalerUtil) target;
-    }
+        CanvasScalerUtil t;
 
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        if (GUILayout.Button("Scale Canvas")) ScaleCanvas();
-    }
-
-    private void ScaleCanvas()
-    {
-        Canvas canvas = t.GetComponent<Canvas>();
-        RectTransform rectTransform = t.GetComponent<RectTransform>();
-
-        Vector2 sizeDelta = new Vector2(t.CanvasWidth, t.CanvasHeight);
-        Vector3 scale = t.CanvasWorldSizeInMeters / t.CanvasWidth * Vector3.one;
-
-        if (canvas.renderMode != RenderMode.WorldSpace)
+        private void OnEnable()
         {
-            Debug.Log("CanvasScalerUtil: Swiched to WorldSpace Render Mode from " + canvas.renderMode);
-            canvas.renderMode = RenderMode.WorldSpace;
+            t = (CanvasScalerUtil)target;
         }
 
-        Debug.LogFormat("CanvasScalerUtil: calculated sizeDelta: {0} scale: {1}", sizeDelta, scale);
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+            if (GUILayout.Button("Scale Canvas")) ScaleCanvas();
+        }
 
-        rectTransform.sizeDelta = sizeDelta;
-        rectTransform.localScale = scale;
+        private void ScaleCanvas()
+        {
+            Canvas canvas = t.GetComponent<Canvas>();
+            RectTransform rectTransform = t.GetComponent<RectTransform>();
+
+            Vector2 sizeDelta = new Vector2(t.CanvasWidth, t.CanvasHeight);
+            Vector3 scale = t.CanvasWorldSizeInMeters / t.CanvasWidth * Vector3.one;
+
+            if (canvas.renderMode != RenderMode.WorldSpace)
+            {
+                Debug.Log("CanvasScalerUtil: Swiched to WorldSpace Render Mode from " + canvas.renderMode);
+                canvas.renderMode = RenderMode.WorldSpace;
+            }
+
+            Debug.LogFormat("CanvasScalerUtil: calculated sizeDelta: {0} scale: {1}", sizeDelta, scale);
+
+            rectTransform.sizeDelta = sizeDelta;
+            rectTransform.localScale = scale;
+        }
     }
 }

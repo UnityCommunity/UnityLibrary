@@ -7,85 +7,88 @@ using UnityEngine;
 /// <summary>
 /// Representation of RGBA colors in 32 bit format.
 /// </summary>
-[Serializable]
-public struct Color32Serializable : ISerializable
+namespace UnityLibrary
 {
-	
-	#region Parameters
+    [Serializable]
+    public struct Color32Serializable : ISerializable
+    {
 
-	/// <summary>
-	/// Th Red.
-	/// </summary>
-	public byte r;
+        #region Parameters
 
-	/// <summary>
-	/// The Green.
-	/// </summary>
-	public byte g;
+        /// <summary>
+        /// Th Red.
+        /// </summary>
+        public byte r;
 
-	/// <summary>
-	/// The Blue.
-	/// </summary>
-	public byte b;
+        /// <summary>
+        /// The Green.
+        /// </summary>
+        public byte g;
 
-	/// <summary>
-	/// The Alpha.
-	/// </summary>
-	public byte a;
+        /// <summary>
+        /// The Blue.
+        /// </summary>
+        public byte b;
 
-	#endregion
+        /// <summary>
+        /// The Alpha.
+        /// </summary>
+        public byte a;
 
-	#region Constructors
+        #endregion
 
-	/// <summary>
-	/// Initializes a new instance of the <see cref="ColorSerializable"/> struct.
-	/// </summary>
-	/// <param name="color">Color.</param>
-	public Color32Serializable ( Color32 color ) : this ( color.r, color.g, color.b, color.a )
-	{
-	}
+        #region Constructors
 
-	/// <summary>
-	/// Initializes a new instance of the <see cref="ColorSerializable"/> struct.
-	/// </summary>
-	/// <param name="r">The red component.</param>
-	/// <param name="g">The green component.</param>
-	/// <param name="b">The blue component.</param>
-	/// <param name="a">The alpha component.</param>
-	public Color32Serializable ( byte r, byte g, byte b, byte a )
-	{
-		this.r = r;
-		this.g = g;
-		this.b = b;
-		this.a = a;
-	}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorSerializable"/> struct.
+        /// </summary>
+        /// <param name="color">Color.</param>
+        public Color32Serializable(Color32 color) : this(color.r, color.g, color.b, color.a)
+        {
+        }
 
-	#endregion
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorSerializable"/> struct.
+        /// </summary>
+        /// <param name="r">The red component.</param>
+        /// <param name="g">The green component.</param>
+        /// <param name="b">The blue component.</param>
+        /// <param name="a">The alpha component.</param>
+        public Color32Serializable(byte r, byte g, byte b, byte a)
+        {
+            this.r = r;
+            this.g = g;
+            this.b = b;
+            this.a = a;
+        }
 
-	#region Operators Overload
+        #endregion
 
-	public static implicit operator Color32Serializable ( Color32 color )
-	{
-		return new Color32Serializable ( color );
-	}
+        #region Operators Overload
 
-	public static implicit operator Color32 ( Color32Serializable color )
-	{
-		return new Color32 ( color.r, color.g, color.b, color.a );
-	}
+        public static implicit operator Color32Serializable(Color32 color)
+        {
+            return new Color32Serializable(color);
+        }
 
-	#endregion
+        public static implicit operator Color32(Color32Serializable color)
+        {
+            return new Color32(color.r, color.g, color.b, color.a);
+        }
 
-	#region ISerializable implementation
+        #endregion
 
-	public void GetObjectData ( SerializationInfo info, StreamingContext context )
-	{
-		info.AddValue ( "r", this.r, typeof ( byte ) );
-		info.AddValue ( "g", this.g, typeof ( byte ) );
-		info.AddValue ( "b", this.b, typeof ( byte ) );
-		info.AddValue ( "a", this.a, typeof ( byte ) );
-	}
+        #region ISerializable implementation
 
-	#endregion
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("r", this.r, typeof(byte));
+            info.AddValue("g", this.g, typeof(byte));
+            info.AddValue("b", this.b, typeof(byte));
+            info.AddValue("a", this.a, typeof(byte));
+        }
 
+        #endregion
+
+    }
 }

@@ -3,15 +3,17 @@ using UnityEngine.UI;
 
 // Usage: attach this to UI Text component
 // it displays current version number from Ios/Android player settings with Application.version
-
-public class GetVersion : MonoBehaviour
+namespace UnityLibrary
 {
-    void Awake()
+    public class GetVersion : MonoBehaviour
     {
-        var t = GetComponent<Text>();
-        if (t!=null)
+        void Awake()
         {
-            t.text = "v"+Application.version;
+            var t = GetComponent<Text>();
+            if (t != null)
+            {
+                t.text = "v" + Application.version;
+            }
         }
     }
 }

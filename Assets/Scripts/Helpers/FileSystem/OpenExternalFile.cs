@@ -7,27 +7,29 @@ using System.IO;
 using System.Diagnostics;
 using System;
 using Debug = UnityEngine.Debug;
-
-public class OpenExternalFile : MonoBehaviour
+namespace UnityLibrary
 {
-
-    // opens external file in default viewer
-    public static void OpenFile(string fullPath)
+    public class OpenExternalFile : MonoBehaviour
     {
-        Debug.Log("opening:" + fullPath);
 
-        if (File.Exists(fullPath))
+        // opens external file in default viewer
+        public static void OpenFile(string fullPath)
         {
-            try
+            Debug.Log("opening:" + fullPath);
+
+            if (File.Exists(fullPath))
             {
-                Process myProcess = new Process();
-                myProcess.StartInfo.FileName = fullPath;
-                myProcess.Start();
-                //				myProcess.WaitForExit();
-            }
-            catch (Exception e)
-            {
-                Debug.Log(e);
+                try
+                {
+                    Process myProcess = new Process();
+                    myProcess.StartInfo.FileName = fullPath;
+                    myProcess.Start();
+                    //				myProcess.WaitForExit();
+                }
+                catch (Exception e)
+                {
+                    Debug.Log(e);
+                }
             }
         }
     }
