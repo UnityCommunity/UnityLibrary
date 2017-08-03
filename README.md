@@ -74,7 +74,7 @@ Our communities:
 - [See](https://unitylibrary.slack.com/) | [Join](https://join.slack.com/t/unitylibrary/shared_invite/MjE1MDA2NzExNDEwLTE1MDA0OTE5NzktOGJmYTI0ZDlkNA) our Slack Channel
 - [See](https://gitter.im/UnityCommunity/Lobby) | [Join](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) our Gitter Channel
 - [See](https://discordapp.com/channels/337579253866692608/337579253866692608) | [Join](https://discord.gg/cXT97hU) our Discord Channel
-- [See](https://trello.com/b/1sOcvQzd/unity-library) | [Join](https://trello.com/invite/b/SIfiVLYi/2c640a78d533382340567e625708c9e0/unity-library) our Trello Development Board
+- [See](https://trello.com/b/1sOcvQzd) | [Join](https://trello.com/invite/unitycommunity/239a9f3cdaf3c54cf7efc2540c304279) our Trello Development Board
 
 ## Improvements/Ideas/Feedback
 
