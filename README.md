@@ -32,7 +32,7 @@ or you can find useful stuff by [browsing awesome resources in the below](#resou
 
 ## Content
 
-- [Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Docs) : "Missing" examples from Unity Docs.
+- [Assets/Scripts/Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Docs) : "Missing" examples from Unity Docs.
 - [Assets/Scripts/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts) : Complete set of Unity scripts.
 - [Assets/Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Editor) : Editor related scripts.
 - [Assets/Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Shaders) : Ready-to-use shaders.
