@@ -24,7 +24,7 @@ You can [browse this repository](#content) and find your desired utility or you 
 git clone https://github.com/UnityCommunity/UnityLibrary.git
 ```
 
-or you can find useful stuff by [browsing awesome resources in the below](#resources).
+and then open the folder in unity or you can find useful stuff by [browsing awesome resources in the below](#resources).
 
 [:sparkles: Contribution is Welcome](#contribution)
 
