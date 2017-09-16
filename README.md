@@ -6,14 +6,6 @@ Useful scripts, snippets and shaders here it is gathered for free.
 
 We have collected most scripts from external sources like Unity Communities (Forums, Answers) and we made it ourselves a little.
 
-## Call for Help
-
-[:star: Help us update our old scripts](https://github.com/UnityCommunity/UnityLibrary/issues/15)
-
-[:star2: Help us update our old shaders](https://github.com/UnityCommunity/UnityLibrary/issues/14)
-
-You can post the old scripts, shaders, ... names to us and we will update them, or you can update them yourself and make a pull request.
-
 ## Getting Started
 
 This repository contains all kind of utilities for Unity from scripts to shaders.
@@ -52,6 +44,8 @@ Awesome and Useful Unity Resources:
 [:scroll: GameDev Resources](https://github.com/Kavex/GameDev-Resources)
 
 [:video_game: Games On GitHub](https://github.com/leereilly/games/)
+
+[:star: Unity Singleton](https://github.com/UnityCommunity/UnitySingleton)
 
 ## Contribution
 
