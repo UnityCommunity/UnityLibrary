@@ -15,6 +15,7 @@ Shader "UnityLibrary/Effects/Wireframe"
 	{
 		Tags { "RenderType"="Opaque" }
 
+
 		Pass
 		{
 			// Wireframe shader based on the the following
