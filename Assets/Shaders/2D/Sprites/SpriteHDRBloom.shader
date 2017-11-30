@@ -2,7 +2,7 @@
 // Camera enable [x] HDR
 // Add Bloom cinematic image effect to Camera, with Threshold 1.1 (so only values over 1.1 will get bloomy)
 
-Shader "Sprites/HDRBloom"
+Shader "UnityCommunity/Sprites/HDRBloom"
 {
 	Properties
 	{
