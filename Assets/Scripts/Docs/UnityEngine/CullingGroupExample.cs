@@ -13,6 +13,8 @@ namespace UnityLibrary
         // distance to search objects from
         public float searchDistance = 3;
 
+        public bool colorInvisibleObjects = false;
+
         int objectCount = 5000;
 
         // collection of objects
@@ -62,6 +64,12 @@ namespace UnityLibrary
         // object state has changed in culling group
         void StateChanged(CullingGroupEvent e)
         {
+            if (colorInvisibleObjects == true && e.isVisible == false)
+            {
+                objects[e.index].material.color = Color.gray;
+                return;
+            }
+
             // if we are in distance band index 0, that is between 0 to searchDistance
             if (e.currentDistance == 0)
             {
