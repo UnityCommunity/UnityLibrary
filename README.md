@@ -1,5 +1,9 @@
 # Unity Library
 
+<div align="center">
+<a href="https://discord.gg/cXT97hU"> <img src="https://img.shields.io/discord/337579253866692608.svg"></a>
+</div>
+<hr>
 :tada: Welcome to Unity Library :tada:
 
 Useful scripts, snippets and shaders here it is gathered for free.
