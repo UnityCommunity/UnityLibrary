@@ -1,11 +1,11 @@
 // https://unitycoder.com/blog/2018/11/30/sprite-sheet-flip-book-shader/
 
-Shader "UnityLibrary/Sprites/FlipBook (AlphaTest)"
+Shader "UnityLibrary/Sprites/FlipBook (Cutout)"
 {
 	Properties
 	{
 		[Header(Texture Sheet)]
-		_MainTex ("Texture", 2D) = "white" {}
+		_MainTex("Texture", 2D) = "white" {}
 		_Cutoff("Alpha Cutoff", Range(0,1)) = 0.15
 		[Header(Settings)]
 		_ColumnsX("Columns (X)", int) = 1
@@ -46,39 +46,40 @@ Shader "UnityLibrary/Sprites/FlipBook (AlphaTest)"
 			float _Cutoff;
 			sampler2D _MainTex;
 			float4 _MainTex_ST;
-			int _ColumnsX;
-			int _RowsY;
+			uint _ColumnsX;
+			uint _RowsY;
 			float _AnimationSpeed;
 
-			v2f vert (appdata v)
+			v2f vert(appdata v)
 			{
 				v2f o;
 				o.vertex = UnityObjectToClipPos(v.vertex);
 
-				// based on http://wiki.unity3d.com/index.php?title=Animating_Tiled_texture
-
-				// Calculate index
-				float index = floor(_Time.y*_AnimationSpeed);
-
-				// repeat when exhausting all frames
-				index = index % (_ColumnsX * _RowsY);
-
-				// Size of tile
+				// get single sprite size
 				float2 size = float2(1.0f / _ColumnsX, 1.0f / _RowsY);
+				uint totalFrames = _ColumnsX * _RowsY;
 
-				// split into horizontal and vertical index
-				float uIndex = floor(index % _ColumnsX);
-				float vIndex = floor(index / _RowsY);
+				// use timer to increment index
+				uint index = _Time.y*_AnimationSpeed;
 
-				// build offset
-				// v coordinate is the bottom of the image in opengl so we need to invert.
-				float2 offset = float2(uIndex * size.x, 1.0f - size.y - vIndex * size.y);
+				// wrap x and y indexes
+				uint indexX = index % _ColumnsX;
+				uint indexY = floor((index % totalFrames) / _ColumnsX);
 
-				o.uv = v.uv*size + offset;
+				// get offsets to our sprite index
+				float2 offset = float2(size.x*indexX,-size.y*indexY);
+
+				// get single sprite UV
+				float2 newUV = v.uv*size;
+
+				// flip Y (to start 0 from top)
+				newUV.y = newUV.y + size.y*(_RowsY - 1);
+
+				o.uv = newUV + offset;
 				return o;
 			}
-			
-			fixed4 frag (v2f i) : SV_Target
+
+			fixed4 frag(v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
 
@@ -87,7 +88,7 @@ Shader "UnityLibrary/Sprites/FlipBook (AlphaTest)"
 
 				return col;
 			}
-			ENDCG
+		ENDCG
 		}
 	}
 }
