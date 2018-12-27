@@ -85,7 +85,7 @@ Feel free to [:postbox: Post your ideas/comments/improvements/recommendations](h
 - [Lootheo (Manuel Otheo)](https://github.com/Lootheo) (Member)
 - [igorrafael (Igor Rafael de Sousa)](https://github.com/igorrafael) (Member)
 - [nrlnd](https://github.com/nrlnd) (Member)
-- [Sacristan (Ģirts Ķesteris)](https://github.com/nrlnd) (Member)
+- [Sacristan (Ģirts Ķesteris)](https://github.com/Sacristan) (Member)
 - [:sparkles: Join the team](#join-the-community)
 
 [:mag: Check out Unity Community People](https://github.com/orgs/UnityCommunity/people)
