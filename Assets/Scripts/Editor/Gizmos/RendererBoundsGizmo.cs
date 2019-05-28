@@ -7,11 +7,6 @@ namespace UnityLibrary
 {
     public class RendererBoundsGizmo : MonoBehaviour
     {
-        void OnDrawGizmos()
-        {
-            OnDrawGizmosSelected();
-        }
-
         void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.yellow;
