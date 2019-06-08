@@ -21,6 +21,9 @@ namespace UnityLibrary
             }
             float aspectRatioY = v.height / (float)v.width;
 
+            // record undo
+            Undo.RecordObject(v.transform, "Set scale");
+
             // scale mesh
             Vector3 scale = v.transform.localScale;
             // fix only height
