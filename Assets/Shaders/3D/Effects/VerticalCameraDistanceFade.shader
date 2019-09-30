@@ -1,7 +1,7 @@
 // similar to height fog effect, but starts fading from camera.Y distance (with some offset)
 // modified standard shader, with custom lighting pass to make faded part completely black
 
-Shader "UnityLibrary/Standard/Fade/VerticalCameraDistance"
+Shader "UnityLibrary/Standard/Effects/VerticalCameraDistance"
 {
 	Properties
 	{
