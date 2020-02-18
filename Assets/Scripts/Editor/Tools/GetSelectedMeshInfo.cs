@@ -31,7 +31,7 @@ namespace UnityLibrary
                 for (int i = 0, length = meshes.Length; i < length; i++)
                 {
                     totalVertices += meshes[i].sharedMesh.vertexCount;
-                    totalTris += meshes[i].sharedMesh.triangles.Length;
+                    totalTris += meshes[i].sharedMesh.triangles.Length / 3;
                     totalMeshes++;
                 }
 
