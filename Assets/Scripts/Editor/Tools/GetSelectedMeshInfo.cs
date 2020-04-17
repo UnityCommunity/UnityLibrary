@@ -1,6 +1,7 @@
 // display selected gameobject mesh stats (should work on prefabs,models in project window also)
 
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,7 +15,9 @@ namespace UnityLibrary
         int totalVertices = 0;
         int totalTris = 0;
 
-        List<int> top10 = new List<int>();
+        Dictionary<int, int> topList = new Dictionary<int, int>();
+        IOrderedEnumerable<KeyValuePair<int, int>> sortedTopList;
+
         MeshFilter[] meshes;
 
         [MenuItem("Tools/UnityLibrary/GetMeshInfo")]
@@ -26,21 +29,32 @@ namespace UnityLibrary
 
         void OnGUI()
         {
+            // TODO process all selected gameobjects
             var selection = Selection.activeGameObject;
-            if (selection != null)
+
+            // if have selection
+            if (selection == null)
+            {
+                EditorGUILayout.LabelField("Select gameobject from scene or hierarchy..");
+
+            }
+            else
             {
                 EditorGUILayout.LabelField("Selected: " + selection.name);
 
                 // update mesh info only if selection changed
                 if (selectionChanged == true)
                 {
-                    top10.Clear();
+                    selectionChanged = false;
+
+                    // clear old top results
+                    topList.Clear();
 
                     totalMeshes = 0;
                     totalVertices = 0;
                     totalTris = 0;
 
-                    // get all meshes
+                    // check all meshes
                     meshes = selection.GetComponentsInChildren<MeshFilter>();
                     for (int i = 0, length = meshes.Length; i < length; i++)
                     {
@@ -48,12 +62,11 @@ namespace UnityLibrary
                         totalVertices += verts;
                         totalTris += meshes[i].sharedMesh.triangles.Length / 3;
                         totalMeshes++;
-                        top10.Add(verts);
+                        topList.Add(i, verts);
                     }
-                    selectionChanged = false;
 
-                    // sort top10
-                    top10.Sort();
+                    // sort top list
+                    sortedTopList = topList.OrderByDescending(x => x.Value);
                 }
 
                 // display stats
@@ -61,23 +74,30 @@ namespace UnityLibrary
                 EditorGUILayout.LabelField("Vertices: " + totalVertices);
                 EditorGUILayout.LabelField("Triangles: " + totalTris);
                 EditorGUILayout.Space();
-                EditorGUILayout.LabelField("TOP 10", EditorStyles.boldLabel);
+                EditorGUILayout.LabelField("TOP 20", EditorStyles.boldLabel);
 
                 // top 10
-                if (meshes != null)
+                if (meshes != null && sortedTopList != null)
                 {
-                    // start from last index
-                    int from = meshes.Length;
-                    // until 10 meshes or if less than 10
-                    int to = meshes.Length - Mathf.Min(10, from);
-                    for (int i = from-1; i >= to; i--)
+                    int i = 0;
+                    foreach (var item in sortedTopList)
                     {
-                        int percent = (int)(top10[i] / (float)totalVertices * 100f);
-                        EditorGUILayout.LabelField(meshes[i].name + " = " + top10[i] + " (" + percent + "%)");
+                        int percent = (int)(item.Value / (float)totalVertices * 100f);
+                        EditorGUILayout.BeginHorizontal();
+                        // ping button
+                        if (GUILayout.Button(" ", GUILayout.Width(16)))
+                        {
+                            EditorGUIUtility.PingObject(meshes[i].transform);
+                        }
+                        EditorGUILayout.LabelField(meshes[i].name + " = " + item.Value + " (" + percent + "%)");
+                        GUILayout.ExpandWidth(true);
+                        EditorGUILayout.EndHorizontal();
+
+                        // show only first 20
+                        if (++i > 20) break;
                     }
                 }
             }
-
         }
 
         void OnSelectionChange()
