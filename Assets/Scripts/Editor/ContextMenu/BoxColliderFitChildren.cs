@@ -1,5 +1,6 @@
 // Adjust Box Collider to fit child meshes inside
-// usage: You have empty parent transform, with child meshes inside, add box collider to parent then use this
+// Usage: You have empty parent transform, with child meshes inside, add box collider to parent then use this
+// NOTE: Doesnt work if root transform is rotated
 
 using UnityEngine;
 using UnityEditor;
