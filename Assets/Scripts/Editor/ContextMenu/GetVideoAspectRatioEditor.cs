@@ -19,7 +19,12 @@ namespace UnityLibrary
                 Debug.LogError("No videoclip assigned..");
                 return;
             }
+#if UNITY_2017 
+            float aspectRatioY = v.texture.height / (float)v.texture.width;
+#else
             float aspectRatioY = v.height / (float)v.width;
+#endif
+
 
             // record undo
             Undo.RecordObject(v.transform, "Set scale");
