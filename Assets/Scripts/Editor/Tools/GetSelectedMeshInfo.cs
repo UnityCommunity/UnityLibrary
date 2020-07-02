@@ -36,7 +36,6 @@ namespace UnityLibrary
             if (selection == null)
             {
                 EditorGUILayout.LabelField("Select gameobject from scene or hierarchy..");
-
             }
             else
             {
@@ -76,7 +75,7 @@ namespace UnityLibrary
                 EditorGUILayout.Space();
                 EditorGUILayout.LabelField("TOP 20", EditorStyles.boldLabel);
 
-                // top 10
+                // top list
                 if (meshes != null && sortedTopList != null)
                 {
                     int i = 0;
@@ -85,11 +84,11 @@ namespace UnityLibrary
                         int percent = (int)(item.Value / (float)totalVertices * 100f);
                         EditorGUILayout.BeginHorizontal();
                         // ping button
-                        if (GUILayout.Button(" ", GUILayout.Width(16)))
+                        if (GUILayout.Button(new GUIContent(" ", "Ping"), GUILayout.Width(16)))
                         {
-                            EditorGUIUtility.PingObject(meshes[i].transform);
+                            EditorGUIUtility.PingObject(meshes[item.Key].transform);
                         }
-                        EditorGUILayout.LabelField(meshes[i].name + " = " + item.Value + " (" + percent + "%)");
+                        EditorGUILayout.LabelField(meshes[item.Key].name + " = " + item.Value + " (" + percent + "%)");
                         GUILayout.ExpandWidth(true);
                         EditorGUILayout.EndHorizontal();
 
