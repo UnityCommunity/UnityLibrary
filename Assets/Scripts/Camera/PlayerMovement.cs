@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Collections;
 
 //Script for moving a gameObject smoothly
+//Usage: Attach the character controller component to the gameobject that you want to move
 
 namespace UnityLibary
 {
     public class PlayerMovement : MonoBehaviour
     {
-        //attach the gameobject that you want to move
+        // place the gameobject that you want to move to the controller placeholder
         public CharacterController controller;
 
         public float speed = 5f;
