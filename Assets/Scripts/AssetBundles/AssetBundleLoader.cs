@@ -84,7 +84,7 @@ namespace UnityLibrary
             }
 
             // now download the actual bundle, with hashString parameter it uses cached version if available
-            www = UnityWebRequest.GetAssetBundle(bundleURL + "?r=" + (Random.value * 9999999), hashString, 0);
+            www = UnityWebRequestAssetBundle.GetAssetBundle(bundleURL + "?r=" + (Random.value * 9999999), hashString, 0);
 
             // wait for load to finish
             yield return www.Send();

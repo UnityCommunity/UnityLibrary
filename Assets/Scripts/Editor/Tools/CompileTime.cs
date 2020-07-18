@@ -76,7 +76,7 @@ namespace UnityLibrary
 
         void OnGUI()
         {
-#if UNITY_2018_4_OR_NEWER
+#if UNITY_2020_1_OR_NEWER
         // Toggle domain reload
         var playModeOptsEnabled = EditorSettings.enterPlayModeOptionsEnabled;
         playModeOptsEnabled = EditorGUILayout.Toggle("Disable Domain Reload", playModeOptsEnabled);
