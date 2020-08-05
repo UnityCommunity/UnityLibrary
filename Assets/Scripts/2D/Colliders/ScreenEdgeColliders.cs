@@ -11,9 +11,9 @@ namespace UnityLibrary
 {
     public class ScreenEdgeColliders : MonoBehaviour
     {
-        Camera cam;
-        EdgeCollider2D edge;
-        Vector2[] edgePoints;
+        private Camera cam;
+        private EdgeCollider2D edge;
+        private Vector2[] edgePoints;
 
         void Awake()
         {
@@ -31,6 +31,7 @@ namespace UnityLibrary
         }
 
         //Use this if you're okay with using the global fields and code in Awake() (more efficient)
+        //You can just ignore/delete StandaloneAddCollider() if thats the case
         void AddCollider()
         {
             //Vector2's for the corners of the screen
