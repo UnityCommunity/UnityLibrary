@@ -31,7 +31,9 @@
   In my example I have a custom Object created by me called **CubeObj** it doesn't do much, but it helps with the example. So when you spawn an item in the scene you have to give the function the following parameters:
   
   >**Type** the typeof object that the list needs to look for and spawn it in the scene
+  
   >**Position** the position where the item should spawn
+  
   >**Rotation** the rotation of the item
   
-   One more thing to remember. Pool has a functio to bring back the objects to the pool, but it requires the object as a parameter. That's why I made an interface called **IPoolActions** that comes with **ReturnObjectToPool** void and will help you return the items to the pool. It's pretty easy, to return an item you simply have to **gameobject.SetActive(false)** and also reset its position **transform.position = Vector3.zero**. 
+   One more thing to remember. Pool has a function to bring back the objects to the pool, but it requires the object as a parameter. That's why I made an interface called **IPoolActions** that comes with **ReturnObjectToPool** void and will help you return the items to the pool. It's pretty easy, to return an item you simply have to **gameobject.SetActive(false)** and also reset its position **transform.position = Vector3.zero**. 
