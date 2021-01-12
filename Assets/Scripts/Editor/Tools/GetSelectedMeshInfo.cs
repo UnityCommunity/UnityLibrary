@@ -69,9 +69,10 @@ namespace UnityLibrary
                 }
 
                 // display stats
-                EditorGUILayout.LabelField("Meshes: " + totalMeshes);
-                EditorGUILayout.LabelField("Vertices: " + totalVertices);
-                EditorGUILayout.LabelField("Triangles: " + totalTris);
+                // String.Format("{0:n0}", 9876); // No digits after the decimal point. Output: 9,876
+                EditorGUILayout.LabelField("Meshes: " + $"{totalMeshes:n0}");
+                EditorGUILayout.LabelField("Vertices: " + $"{totalVertices:n0}");
+                EditorGUILayout.LabelField("Triangles: " + $"{totalTris:n0}");
                 EditorGUILayout.Space();
                 EditorGUILayout.LabelField("TOP 20", EditorStyles.boldLabel);
 
@@ -88,7 +89,7 @@ namespace UnityLibrary
                         {
                             EditorGUIUtility.PingObject(meshes[item.Key].transform);
                         }
-                        EditorGUILayout.LabelField(meshes[item.Key].name + " = " + item.Value + " (" + percent + "%)");
+                        EditorGUILayout.LabelField(meshes[item.Key].name + " = " + $"{item.Value:n0}" + " (" + percent + "%)");
                         GUILayout.ExpandWidth(true);
                         EditorGUILayout.EndHorizontal();
 
