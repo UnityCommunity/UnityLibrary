@@ -1,6 +1,5 @@
 // display selected gameobject mesh stats (should work on prefabs,models in project window also)
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
