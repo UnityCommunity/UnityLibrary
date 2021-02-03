@@ -7,3 +7,11 @@ color_scheme: light
 # Enable or disable the site search
 # Supports true (default) or false
 search_enabled: true
+
+aux_links:
+  "Awesome Unity Community":
+    - "https://unitycommunity.github.io/AwesomeUnityCommunity/#/"
+  "Blog":
+    - "https://unitycommunity.github.io/blog/"
+  "Wiki":
+    - "https://unitycommunity.github.io/wiki/"
