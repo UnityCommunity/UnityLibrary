@@ -1,3 +1,9 @@
+---
+layout: default
+title: Docs
+nav_order: 3
+---
+
 # Docs
 Sometimes we see some missing, outdated or broken documentations and examples at Unity official documentation Manual or Scripting API, so we have collected some of them and made a good examples and documentations about them.
 
