@@ -1,3 +1,9 @@
+---
+layout: default
+title: Script Templates
+nav_order: 6
+---
+
 # Script Templates
 Script templates are plain text documents that contains a simple script functionally that let's you get started with script faster.
 
