@@ -1,2 +1,9 @@
-#theme: jekyll-theme-slate
+# Theme
 remote_theme: pmarsceill/just-the-docs
+
+# Color scheme: light or dark
+color_scheme: light
+
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: true
