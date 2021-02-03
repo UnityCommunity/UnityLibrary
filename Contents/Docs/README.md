@@ -2,6 +2,7 @@
 layout: default
 title: Docs
 nav_order: 1
+parent: Contents
 ---
 
 # Docs
