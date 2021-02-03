@@ -23,26 +23,6 @@ git clone https://github.com/UnityCommunity/UnityLibrary.git
 
 and then open the folder in Unity or you can find useful stuff by browsing awesome [resources](#resources) below.
 
-## Content
-
-- [Assets/Scripts/Docs/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Docs) : "Missing" examples from Unity Docs.
-- [Assets/Scripts/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts) : Complete set of Unity scripts.
-- [Assets/Scripts/Editor/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Scripts/Editor) : Editor related scripts.
-- [Assets/Shaders/](https://github.com/UnityCommunity/UnityLibrary/tree/master/Assets/Shaders) : Ready-to-use shaders.
-- [ScriptTemplates/](https://github.com/UnityCommunity/UnityLibrary/tree/master/ScriptTemplates) : Contains ready-to-use script templates.
-- [External/](https://github.com/UnityCommunity/UnityLibrary/tree/master/External) : External libaries, scripts and utilities that are related to unity.
-
-## Resources
-
-Awesome and Useful Unity Resources:
-
-- [Awesome Unity](https://github.com/RyanNielson/awesome-unity)
-- [Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
-- [Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
-- [GameDev Resources](https://github.com/Kavex/GameDev-Resources)
-- [Games On GitHub](https://github.com/leereilly/games/)
-- [Unity Singleton](https://github.com/UnityCommunity/UnitySingleton)
-
 ## Contribution
 
 Any contribution to this repository is welcome.
