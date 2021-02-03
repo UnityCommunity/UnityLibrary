@@ -1,3 +1,9 @@
+---
+layout: default
+title: Editor scripts
+nav_order: 4
+---
+
 # Editor Scripts
 Extend the Unity Editor with the power of Community.
 
