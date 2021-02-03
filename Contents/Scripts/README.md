@@ -1,3 +1,9 @@
+---
+layout: default
+title: Scripts
+nav_order: 7
+---
+
 # Scripts
 The game logic. the most important part of game development.
 
