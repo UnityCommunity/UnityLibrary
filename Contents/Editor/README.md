@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Editor scripts
-nav_order: 4
+nav_order: 2
+parent: Contents
 ---
 
 # Editor Scripts
