@@ -66,9 +66,9 @@ Our communities:
 - [See](https://gitter.im/UnityCommunity/Lobby) / [Join](https://gitter.im/UnityCommunity/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link) our Gitter Channel.
 - [See](https://trello.com/b/1sOcvQzd) / [Join](https://trello.com/invite/unitycommunity/239a9f3cdaf3c54cf7efc2540c304279) our Trello Development Board.
 
-## Improvements/Ideas/Feedback
+## Improvements / Ideas / Feedback
 
-Feel free to [post your ideas/comments/improvements/recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
+Feel free to [post your ideas / comments / improvements / recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
 
 ## Credits
 
@@ -81,7 +81,7 @@ Feel free to [post your ideas/comments/improvements/recommendations](https://git
 - [Agarcialeon (Álvaro García León)](https://github.com/agarcialeon) (Member)
 - [:sparkles: Join the team](#join-the-community)
 
-[:mag: Check out Unity Community People](https://github.com/orgs/UnityCommunity/people)
+[Check out Unity Community People](https://github.com/orgs/UnityCommunity/people)
 
 ## License
 
