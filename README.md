@@ -1,10 +1,4 @@
-# Unity Library
-
-<div align="center">
-<a href="https://discord.gg/cXT97hU"> <img src="https://img.shields.io/discord/337579253866692608.svg"></a>
-</div>
-<hr>
-:tada: Welcome to Unity Library :tada:
+Welcome to Unity Library!
 
 Useful scripts, snippets and shaders here it is gathered for free.
 
@@ -14,17 +8,17 @@ We have collected most scripts from external sources like Unity Communities (For
 
 This repository contains all kind of utilities for Unity from scripts to shaders.
 
-You can [browse this repository](#content) and find your desired utility or you can [clone this repository](https://help.github.com/articles/cloning-a-repository/) and browse the files:
+You can [browse this repository](https://github.com/UnityCommunity/UnityLibrary) and find your desired utility or you can [clone this repository](https://help.github.com/articles/cloning-a-repository/) and browse the files:
 
 ```bash
 git clone https://github.com/UnityCommunity/UnityLibrary.git
 ```
 
-and then open the folder in unity or you can find useful stuff by [browsing awesome resources in the below](#resources).
+and then open the folder in Unity or you can find useful stuff by [browsing awesome resources in the below](#resources).
 
-[:sparkles: Contribution is Welcome](#contribution)
+[Contribution is Welcome](#contribution)
 
-[:fire: Join the Community](#join-the-community)
+[Join the Community](#join-the-community)
 
 ## Content
 
@@ -39,33 +33,28 @@ and then open the folder in unity or you can find useful stuff by [browsing awes
 
 Awesome and Useful Unity Resources:
 
-[:sparkles: Awesome Unity](https://github.com/RyanNielson/awesome-unity)
-
-[:clipboard: Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
-
-[:book: Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
-
-[:scroll: GameDev Resources](https://github.com/Kavex/GameDev-Resources)
-
-[:video_game: Games On GitHub](https://github.com/leereilly/games/)
-
-[:star: Unity Singleton](https://github.com/UnityCommunity/UnitySingleton)
+[Awesome Unity](https://github.com/RyanNielson/awesome-unity)
+[Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
+[Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
+[GameDev Resources](https://github.com/Kavex/GameDev-Resources)
+[Games On GitHub](https://github.com/leereilly/games/)
+[Unity Singleton](https://github.com/UnityCommunity/UnitySingleton)
 
 ## Contribution
 
-Any contribution to this repository are welcome.
+Any contribution to this repository is welcome.
 
-Also you [join as a member](#join-the-community) to do more stuff such as creating new repositories for more awesome open source works.
+Also you can [join as a member](#join-the-community) to do more stuff such as creating new repositories for more awesome open source works.
 
-[:closed_book: Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md) to find a way to help.
+[Read our Contribution Guidelines](https://github.com/UnityCommunity/UnityLibrary/blob/master/CONTRIBUTING.md) to find a way to help.
 
 ## Join the Community
 
 Send your GitHub id to one of the below ways:
 
-- [:speech_balloon: Unity Forums](https://forum.unity3d.com/conversations/add?to=mgear) <sup><i>*Private message</i></sup>
+- [Unity Forums](https://forum.unity3d.com/conversations/add?to=mgear) <sup><i>*Private message</i></sup>
 - Signup using [Google Forms](https://goo.gl/forms/DFspn3ByJBoLWEth2) <sup><i>*Can take few days until processed</i></sup>
-- [:e-mail: hasanbayat1393@gmail.com](mailto:hasanbayat1393@gmail.com)
+- [hasanbayat1393@gmail.com](mailto:hasanbayat1393@gmail.com)
 
 Our communities:
 
@@ -76,7 +65,7 @@ Our communities:
 
 ## Improvements/Ideas/Feedback
 
-Feel free to [:postbox: Post your ideas/comments/improvements/recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
+Feel free to [post your ideas/comments/improvements/recommendations](https://github.com/UnityCommunity/UnityLibrary/issues)
 
 ## Credits
 
