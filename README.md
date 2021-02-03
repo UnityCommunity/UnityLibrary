@@ -79,7 +79,6 @@ Feel free to [post your ideas / comments / improvements / recommendations](https
 - [nrlnd](https://github.com/nrlnd) (Member)
 - [Sacristan (Ģirts Ķesteris)](https://github.com/Sacristan) (Member)
 - [Agarcialeon (Álvaro García León)](https://github.com/agarcialeon) (Member)
-- [:sparkles: Join the team](#join-the-community)
 
 [Check out Unity Community People](https://github.com/orgs/UnityCommunity/people)
 
