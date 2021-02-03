@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Messaging
-nav_order: 8
+nav_order: 6
+parent: Contents
 ---
 
 * SendMessage substitute for global messaging without object references;
