@@ -1,3 +1,10 @@
+---
+layout: default
+title: Home
+nav_order: 1
+---
+
+
 Welcome to Unity Library!
 
 Useful scripts, snippets and shaders here it is gathered for free.
@@ -14,11 +21,7 @@ You can [browse this repository](https://github.com/UnityCommunity/UnityLibrary)
 git clone https://github.com/UnityCommunity/UnityLibrary.git
 ```
 
-and then open the folder in Unity or you can find useful stuff by [browsing awesome resources in the below](#resources).
-
-[Contribution is Welcome](#contribution)
-
-[Join the Community](#join-the-community)
+and then open the folder in Unity or you can find useful stuff by browsing awesome [resources](#resources) below.
 
 ## Content
 
@@ -33,12 +36,12 @@ and then open the folder in Unity or you can find useful stuff by [browsing awes
 
 Awesome and Useful Unity Resources:
 
-[Awesome Unity](https://github.com/RyanNielson/awesome-unity)
-[Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
-[Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
-[GameDev Resources](https://github.com/Kavex/GameDev-Resources)
-[Games On GitHub](https://github.com/leereilly/games/)
-[Unity Singleton](https://github.com/UnityCommunity/UnitySingleton)
+- [Awesome Unity](https://github.com/RyanNielson/awesome-unity)
+- [Unity Script Collection](https://github.com/michidk/Unity-Script-Collection)
+- [Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
+- [GameDev Resources](https://github.com/Kavex/GameDev-Resources)
+- [Games On GitHub](https://github.com/leereilly/games/)
+- [Unity Singleton](https://github.com/UnityCommunity/UnitySingleton)
 
 ## Contribution
 
