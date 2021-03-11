@@ -50,7 +50,7 @@ public static class GlobalVariables
     /// <remarks>It uses a lock under the hood to ensure consistensy between threads</remarks>
     /// <param name="key">The variable name/key</param>
     /// <param name="value">The variable value</param>
-    public static void Set(string key, string value)
+    public static void Set(string key, object value)
     {
         lock (lockObject)
         {
