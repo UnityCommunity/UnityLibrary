@@ -53,8 +53,9 @@ namespace UnityLibrary
             }
             if (Input.GetMouseButton(0))
             {
-                Vector3 mousePosition = m_Camera.ScreenToWorldPoint(Input.mousePosition);
-                mousePosition.z = m_LineRenderer.transform.position.z;
+                var pos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, lineRenderer.transform.position.z - m_Camera.transform.position.z);
+                Vector3 mousePosition = m_Camera.ScreenToWorldPoint(pos);
+                mousePosition.z = 0;
                 if (!m_Points.Contains(mousePosition))
                 {
                     m_Points.Add(mousePosition);
