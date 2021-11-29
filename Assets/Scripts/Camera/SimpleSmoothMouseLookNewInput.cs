@@ -63,7 +63,7 @@ namespace UnityLibrary
 
         private void Start()
         {
-            if (ReferenceManager.instance != null) ReferenceManager.instance.mouseControls = this;
+            
         }
 
         private void OnEnable()
@@ -199,14 +199,14 @@ namespace UnityLibrary
             var vert = -Keyboard.current.sKey.ReadValue() + Keyboard.current.wKey.ReadValue();
             if (vert != 0)
             {
-                moveTransform.Translate(transform.forward * flySpeed * EloManager.instance.camSpeedMultiplier * vert * Time.deltaTime, Space.World);
+                moveTransform.Translate(transform.forward * flySpeed * vert * Time.deltaTime, Space.World);
                 moved = true;
             }
 
             var horz = -Keyboard.current.aKey.ReadValue() + Keyboard.current.dKey.ReadValue();
             if (horz != 0)
             {
-                moveTransform.Translate(transform.right * flySpeed * EloManager.instance.camSpeedMultiplier * horz * Time.deltaTime, Space.World);
+                moveTransform.Translate(transform.right * flySpeed * horz * Time.deltaTime, Space.World);
                 moved = true;
             }
 
