@@ -8,6 +8,8 @@ namespace UnityLibrary
 {
     public class WindowAlwaysOnTop : MonoBehaviour
     {
+#if !UNITY_STANDALONE_LINUX
+
         // https://stackoverflow.com/a/34703664/5452781
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         private const UInt32 SWP_NOSIZE = 0x0001;
@@ -26,11 +28,12 @@ namespace UnityLibrary
         {
             return GetActiveWindow();
         }
+#endif
 
         void Awake()
         {
             // TODO save current window pos to player prefs on exit, then can open into same position next time
-#if !UNITY_EDITOR
+#if !UNITY_EDITOR && !UNITY_STANDALONE_LINUX
         Debug.Log("Make window stay on top");
         SetWindowPos(GetActiveWindow(), HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
 #endif
