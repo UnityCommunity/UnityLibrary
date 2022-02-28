@@ -4,7 +4,7 @@
 
 Useful scripts, snippets and shaders here it is gathered for free.
 
-We have collected most scripts from external sources like Unity Communities (Forums, Answers) and we made it ourselves a little.
+We have collected most of the scripts from external sources like Unity Communities (Forums, Answers) and some of them are made by us.
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ You can [browse this repository](#content) and find your desired utility or you 
 git clone https://github.com/UnityCommunity/UnityLibrary.git
 ```
 
-and then open the folder in unity or you can find useful stuff by [browsing awesome resources in the below](#resources).
+then open the folder in unity or you can find useful stuff by [browsing awesome resources in the below](#resources).
 
 [:sparkles: Contribution is Welcome](#contribution)
 
