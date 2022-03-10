@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Globalization;
 
+// e.g. "#FFFFFF".ToColor()
+
 namespace UnityLibrary
 {
     public static class StringExtensions
