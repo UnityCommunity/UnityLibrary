@@ -12,6 +12,9 @@ namespace UnityLibrary
         [PostProcessBuildAttribute(1)]
         public static void OnPostprocessBuild(BuildTarget target, string pathToBuiltProject)
         {
+            // only for windows
+            if (target != BuildTarget.StandaloneWindows) return;
+        
             Debug.Log("<color=#00FF00>### POSTBUILD : COPY EMPTY STREAMINGASSETS-FOLDERS ###</color>");
             Debug.Log("Build done: " + pathToBuiltProject);
 
