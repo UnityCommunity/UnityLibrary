@@ -51,10 +51,10 @@ Shader "UnityLibrary/2D/Effects/ColorCycle"
 				float gray = tex2D(_MainTex, i.uv).r;
 
 				// get scrolling
-				float scroll = frac(_Time.x*_Speed);
+				float scroll = frac(gray + _Time.x*_Speed);
 
 				// get gradient color from texture
-				fixed4 col = tex2D(_GradientTex,float2(gray+scroll,0.5));
+				fixed4 col = tex2D(_GradientTex,float2(scroll,0.5));
 
 				return col;
 			}
