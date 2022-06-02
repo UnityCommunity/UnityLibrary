@@ -59,7 +59,8 @@ namespace UnityLibrary
                     {
                         int verts = meshes[i].sharedMesh.vertexCount;
                         totalVertices += verts;
-                        totalTris += meshes[i].sharedMesh.triangles.Length / 3;
+                        // not for point/line meshes
+                        if (meshes[i].sharedMesh.GetTopology(0) == MeshTopology.Triangles) totalTris += meshes[i].sharedMesh.triangles.Length / 3;
                         totalMeshes++;
                         topList.Add(i, verts);
                     }
