@@ -1,58 +1,66 @@
 using UnityEngine;
 using System.Collections;
 
-// usage: attach this script into camera, call Shake() method to start
-// source: http://answers.unity3d.com/answers/992509/view.html
+/* 
+ * Usage: attach this script to a camera or any other object, call Shake() method to start shaking it
+* To turn off, change influence to zero
+* Attach the camera to an empty game object to keep its local position and rotation
+*/
 namespace UnityLibrary
 {
     public class CameraShake : MonoBehaviour
     {
-        public bool shakePosition;
-        public bool shakeRotation;
-
-        public float shakeIntensityMin = 0.1f;
-        public float shakeIntensityMax = 0.5f;
-        public float shakeDecay = 0.02f;
+        [Range(0f, 1f)]
+        public float shakeInfluence = 0.5f;
+        [Range(0f, 10f)]
+        public float rotationInfluence = 0f;
 
         private Vector3 OriginalPos;
         private Quaternion OriginalRot;
-
         private bool isShakeRunning = false;
 
-        // call this function to start shaking
-        public void Shake()
+/// <summary>
+/// Will shake the camera with a random value between minIntensity and maxIntensity for duration
+/// </summary>
+/// <param name="minIntensity"></param>
+/// <param name="maxIntensity"></param>
+/// <param name="duration"></param>
+        public void Shake(float minIntensity, float maxIntensity, float duration)
         {
+            if (isShakeRunning)
+                return;
+
             OriginalPos = transform.position;
             OriginalRot = transform.rotation;
-            StartCoroutine("ProcessShake");
+
+            float shake = Random.Range(minIntensity, maxIntensity) * shakeInfluence;
+            duration *= shakeInfluence;
+
+            StartCoroutine(ProcessShake(shake, duration));
         }
 
-        IEnumerator ProcessShake()
+        IEnumerator ProcessShake(float shake, float duration)
         {
-            if (!isShakeRunning)
+            isShakeRunning = true;
+            float countdown = duration;
+            float initialShake = shake;
+
+            while (countdown > 0)
             {
-                isShakeRunning = true;
-                float currentShakeIntensity = Random.Range(shakeIntensityMin, shakeIntensityMax);
+                countdown -= Time.deltaTime;
 
-                while (currentShakeIntensity > 0)
-                {
-                    if (shakePosition)
-                    {
-                        transform.position = OriginalPos + Random.insideUnitSphere * currentShakeIntensity;
-                    }
-                    if (shakeRotation)
-                    {
-                        transform.rotation = new Quaternion(OriginalRot.x + Random.Range(-currentShakeIntensity, currentShakeIntensity) * .2f,
-                                                             OriginalRot.y + Random.Range(-currentShakeIntensity, currentShakeIntensity) * .2f,
-                                                             OriginalRot.z + Random.Range(-currentShakeIntensity, currentShakeIntensity) * .2f,
-                                                             OriginalRot.w + Random.Range(-currentShakeIntensity, currentShakeIntensity) * .2f);
-                    }
-                    currentShakeIntensity -= shakeDecay;
-                    yield return null;
-                }
+                float lerpIntensity = countdown / duration;
+                shake = Mathf.Lerp(0f, initialShake, lerpIntensity);
 
-                isShakeRunning = false;
+                transform.position = OriginalPos + Random.insideUnitSphere * shake;
+                transform.rotation = Quaternion.Euler(OriginalRot.eulerAngles + Random.insideUnitSphere * shake * rotationInfluence);
+
+                yield return null;
             }
+
+            transform.position = OriginalPos;
+            transform.rotation = OriginalRot;
+            isShakeRunning = false;
         }
     }
 }
