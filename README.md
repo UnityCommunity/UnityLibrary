@@ -1,7 +1,7 @@
 
-# ![Unity Library](https://i.imgur.com/btbDvqv.png)
-
-:tada: Welcome to Unity Library  :tada:
+# ![Unity Library](https://raw.githubusercontent.com/xXxT0SHIIIxXx/UnityLibrary/master/Logos/Unity_Library_White.png#gh-dark-mode-only)
+# ![Unity Library](https://raw.githubusercontent.com/xXxT0SHIIIxXx/UnityLibrary/master/Logos/Unity_Library_Black.png#gh-light-mode-only)
+:tada: Welcome to Unity Library :tada:
 
 Useful scripts, snippets and shaders here it is gathered for free.
 
