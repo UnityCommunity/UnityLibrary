@@ -1,6 +1,10 @@
 
-# ![Unity Library](https://raw.githubusercontent.com/xXxT0SHIIIxXx/UnityLibrary/master/Logos/Unity_Library_White.png#gh-dark-mode-only)
-# ![Unity Library](https://raw.githubusercontent.com/xXxT0SHIIIxXx/UnityLibrary/master/Logos/Unity_Library_Black.png#gh-light-mode-only)
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/xXxT0SHIIIxXx/UnityLibrary/master/Logos/Unity_Library_Black.png">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/xXxT0SHIIIxXx/UnityLibrary/master/Logos/Unity_Library_White.png">
+  <img src="">
+</picture>
+
 :tada: Welcome to Unity Library :tada:
 
 Useful scripts, snippets and shaders here it is gathered for free.
