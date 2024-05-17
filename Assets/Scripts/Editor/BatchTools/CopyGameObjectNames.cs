@@ -3,6 +3,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Text;
+using System.Linq;
 namespace UnityLibrary.Tools
 {
     public class CopyGameObjectNames : EditorWindow
@@ -38,7 +39,10 @@ namespace UnityLibrary.Tools
             StringBuilder sb = new StringBuilder();
             GameObject[] selectedObjects = Selection.gameObjects;
 
-            foreach (GameObject obj in selectedObjects)
+            // Sort the selected objects by their sibling index
+            var sortedObjects = selectedObjects.OrderBy(go => go.transform.GetSiblingIndex()).ToArray();
+
+            foreach (GameObject obj in sortedObjects)
             {
                 sb.AppendLine(obj.name);
             }
