@@ -78,7 +78,7 @@ Feel free to [:postbox: Post your ideas/comments/improvements/recommendations](h
 ## Credits
 
 - [UnityCoder (mika)](https://github.com/unitycoder) (Owner)
-- [EmpireWorld (Hasan Bayat)](https://github.com/EmpireWorld) (Owner)
+- [hasanbayatme (Hasan Bayat)](https://github.com/hasanbayatme) (Owner)
 - [Lootheo (Manuel Otheo)](https://github.com/Lootheo) (Member)
 - [igorrafael (Igor Rafael de Sousa)](https://github.com/igorrafael) (Member)
 - [nrlnd](https://github.com/nrlnd) (Member)
