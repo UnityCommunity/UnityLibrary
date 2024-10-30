@@ -67,10 +67,15 @@ namespace UnityLibrary
                 }
                 else
                 {
-                    // Add children if it's a GameObject
+                    // Add children if it's a GameObject and find sprites in it
                     if (obj is GameObject gameObject)
                     {
-                        AddChildren(gameObject);
+                        AddChildrenAndSprites(gameObject);
+                    }
+                    // If it's a Texture2D, load its Sprites (if any)
+                    else if (obj is Texture2D texture)
+                    {
+                        AddTextureSprites(texture);
                     }
                 }
             }
@@ -90,12 +95,22 @@ namespace UnityLibrary
             Repaint();
         }
 
-        private void AddChildren(GameObject obj)
+        private void AddChildrenAndSprites(GameObject obj)
         {
+            // Add the GameObject itself
+            allObjects.Add(obj);
+
+            // Check if the GameObject has a SpriteRenderer and add the Sprite
+            var spriteRenderer = obj.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null && spriteRenderer.sprite != null)
+            {
+                allObjects.Add(spriteRenderer.sprite); // Add the sprite separately
+            }
+
+            // Recursively add children and their sprites
             foreach (Transform child in obj.transform)
             {
-                allObjects.Add(child.gameObject);
-                AddChildren(child.gameObject);
+                AddChildrenAndSprites(child.gameObject);
             }
         }
 
@@ -107,9 +122,32 @@ namespace UnityLibrary
             {
                 string path = AssetDatabase.GUIDToAssetPath(guid);
                 Object asset = AssetDatabase.LoadAssetAtPath<Object>(path);
+
+                // Add the asset itself
                 if (asset != null)
                 {
                     allObjects.Add(asset);
+
+                    // If it's a Texture2D, also add any Sprites inside it
+                    if (asset is Texture2D texture)
+                    {
+                        AddTextureSprites(texture);
+                    }
+                }
+            }
+        }
+
+        private void AddTextureSprites(Texture2D texture)
+        {
+            // Check if the texture contains any sprites (e.g., from a sprite sheet)
+            string path = AssetDatabase.GetAssetPath(texture);
+            Object[] assets = AssetDatabase.LoadAllAssetsAtPath(path);
+
+            foreach (Object asset in assets)
+            {
+                if (asset is Sprite sprite)
+                {
+                    allObjects.Add(sprite); // Add each sprite separately
                 }
             }
         }
