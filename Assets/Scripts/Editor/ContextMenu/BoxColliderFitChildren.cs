@@ -14,33 +14,40 @@ namespace UnityLibrary
         {
             BoxCollider col = (BoxCollider)command.context;
 
-            // record undo
+            // Record undo for undo functionality
             Undo.RecordObject(col.transform, "Fit Box Collider To Children");
 
-            // get child mesh bounds
-            var b = GetRecursiveMeshBounds(col.gameObject);
+            // Get transformed bounds relative to the collider object
+            Bounds localBounds = GetLocalBounds(col.transform);
 
-            // set collider local center and size
-            col.center = col.transform.root.InverseTransformVector(b.center) - col.transform.position;
-            col.size = b.size;
+            // Set collider local center and size
+            col.center = localBounds.center;
+            col.size = localBounds.size;
         }
 
-        public static Bounds GetRecursiveMeshBounds(GameObject go)
+        public static Bounds GetLocalBounds(Transform parent)
         {
-            var r = go.GetComponentsInChildren<Renderer>();
-            if (r.Length > 0)
+            var renderers = parent.GetComponentsInChildren<Renderer>();
+            if (renderers.Length == 0)
+                return new Bounds(Vector3.zero, Vector3.zero); // No renderers
+
+            // Initialize bounds in local space
+            Bounds bounds = new Bounds(parent.InverseTransformPoint(renderers[0].bounds.center), 
+                                       parent.InverseTransformVector(renderers[0].bounds.size));
+
+            // Encapsulate all child renderers
+            for (int i = 1; i < renderers.Length; i++)
             {
-                var b = r[0].bounds;
-                for (int i = 1; i < r.Length; i++)
-                {
-                    b.Encapsulate(r[i].bounds);
-                }
-                return b;
+                var worldBounds = renderers[i].bounds;
+
+                // Convert world bounds to local space
+                Vector3 localCenter = parent.InverseTransformPoint(worldBounds.center);
+                Vector3 localSize = parent.InverseTransformVector(worldBounds.size);
+
+                bounds.Encapsulate(new Bounds(localCenter, localSize));
             }
-            else // TODO no renderers
-            {
-                return new Bounds(Vector3.one, Vector3.one);
-            }
+
+            return bounds;
         }
     }
 }
