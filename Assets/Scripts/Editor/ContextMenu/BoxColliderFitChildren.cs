@@ -1,6 +1,3 @@
-// Adjust Box Collider to fit child meshes inside
-// Usage: You have empty parent transform, with child meshes inside, add box collider to parent then use this
-
 using UnityEngine;
 using UnityEditor;
 
@@ -13,48 +10,62 @@ namespace UnityLibrary
         {
             BoxCollider col = (BoxCollider)command.context;
 
-            // record undo
+            // Record undo
             Undo.RecordObject(col.transform, "Fit Box Collider To Children");
 
-            // first reset transform rotation
-            var origRot = col.transform.rotation;
-            col.transform.rotation = Quaternion.identity;
+            // Get world-space bounds of all child meshes
+            var worldBounds = GetRecursiveMeshBounds(col.gameObject);
 
-            // get child mesh bounds
-            var b = GetRecursiveMeshBounds(col.gameObject);
+            if (worldBounds.size == Vector3.zero)
+            {
+                Debug.LogWarning("No valid meshes found to fit the BoxCollider.");
+                return;
+            }
 
-            // set collider local center and size
-            col.center = col.transform.root.InverseTransformVector(b.center) - col.transform.position;
+            // Convert world-space center to local space
+            Vector3 localCenter = col.transform.InverseTransformPoint(worldBounds.center);
 
-            // keep size positive
-            var size = b.size;
-            size.x = Mathf.Abs(size.x);
-            size.y = Mathf.Abs(size.y);
-            size.z = Mathf.Abs(size.z);
+            // Convert world-space size to local space
+            Vector3 localSize = col.transform.InverseTransformVector(worldBounds.size);
 
-            col.size = b.size;
+            // Ensure size is positive
+            localSize = new Vector3(Mathf.Abs(localSize.x), Mathf.Abs(localSize.y), Mathf.Abs(localSize.z));
 
-            // restore rotation
-            col.transform.rotation = origRot;
+            // Fix potential center flipping
+            if (Vector3.Dot(col.transform.right, Vector3.right) < 0)
+            {
+                localCenter.x = -localCenter.x;
+            }
+            if (Vector3.Dot(col.transform.up, Vector3.up) < 0)
+            {
+                localCenter.y = -localCenter.y;
+            }
+            if (Vector3.Dot(col.transform.forward, Vector3.forward) < 0)
+            {
+                localCenter.z = -localCenter.z;
+            }
+
+            // Apply to collider
+            col.center = localCenter;
+            col.size = localSize;
         }
 
         public static Bounds GetRecursiveMeshBounds(GameObject go)
         {
-            var r = go.GetComponentsInChildren<Renderer>();
-            if (r.Length > 0)
-            {
-                var b = r[0].bounds;
-                for (int i = 1; i < r.Length; i++)
-                {
-                    b.Encapsulate(r[i].bounds);
-                }
-                return b;
-            }
-            else // TODO no renderers?
-            {
-                //return new Bounds(Vector3.one, Vector3.one);
+            Renderer[] renderers = go.GetComponentsInChildren<Renderer>();
+
+            if (renderers.Length == 0)
                 return new Bounds();
+
+            // Start with the first renderer’s bounds in world space
+            Bounds worldBounds = renderers[0].bounds;
+
+            for (int i = 1; i < renderers.Length; i++)
+            {
+                worldBounds.Encapsulate(renderers[i].bounds);
             }
+
+            return worldBounds;
         }
     }
 }
