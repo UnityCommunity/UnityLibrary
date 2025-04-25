@@ -26,14 +26,14 @@ namespace UnityLibrary.EditorTools
             Color oldColor = GUI.color;
             GUI.color = gridColor;
 
-            // Horizontal lines
-            for (int y = startOffsetX; y < Screen.height; y += gridSpacingY)
+            // vertical lines
+            for (int y = startOffsetY; y < Screen.height; y += gridSpacingY)
             {
                 GUI.DrawTexture(new Rect(0, y, Screen.width, 1), Texture2D.whiteTexture);
             }
 
-            // Vertical lines
-            for (int x = startOffsetY; x < Screen.width; x += gridSpacingX)
+            // horizontal lines
+            for (int x = startOffsetX; x < Screen.width; x += gridSpacingX)
             {
                 GUI.DrawTexture(new Rect(x, 0, 1, Screen.height), Texture2D.whiteTexture);
             }
