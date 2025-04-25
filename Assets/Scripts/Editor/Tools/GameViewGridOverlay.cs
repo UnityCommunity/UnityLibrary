@@ -1,6 +1,3 @@
-// draws grid lines in the game view (useful for seeing the resolution of ui elements in the game view)
-// usage: attach to a game object in the scene, set gameobject tag to "EditorOnly" to remove from builds
-
 using UnityEngine;
 
 namespace UnityLibrary.EditorTools
@@ -11,9 +8,15 @@ namespace UnityLibrary.EditorTools
 #if UNITY_EDITOR
         public bool drawGrid = true;
 
-        public int gridSpacingX = 64;
-        public int gridSpacingY = 64;
+        [Header("Grid Cell Size (visible area)")]
+        public int gridSizeX = 64;
+        public int gridSizeY = 64;
 
+        [Header("Spacing Between Cells (invisible gap)")]
+        public int spacingX = 16;
+        public int spacingY = 16;
+
+        [Header("Start Offsets")]
         public int startOffsetX = 0;
         public int startOffsetY = 0;
 
@@ -26,16 +29,22 @@ namespace UnityLibrary.EditorTools
             Color oldColor = GUI.color;
             GUI.color = gridColor;
 
-            // vertical lines
-            for (int y = startOffsetY; y < Screen.height; y += gridSpacingY)
-            {
-                GUI.DrawTexture(new Rect(0, y, Screen.width, 1), Texture2D.whiteTexture);
-            }
+            int cellStrideX = gridSizeX + spacingX;
+            int cellStrideY = gridSizeY + spacingY;
 
-            // horizontal lines
-            for (int x = startOffsetX; x < Screen.width; x += gridSpacingX)
+            for (int y = startOffsetY; y + gridSizeY <= Screen.height; y += cellStrideY)
             {
-                GUI.DrawTexture(new Rect(x, 0, 1, Screen.height), Texture2D.whiteTexture);
+                for (int x = startOffsetX; x + gridSizeX <= Screen.width; x += cellStrideX)
+                {
+                    // Left line
+                    GUI.DrawTexture(new Rect(x, y, 1, gridSizeY), Texture2D.whiteTexture);
+                    // Right line
+                    GUI.DrawTexture(new Rect(x + gridSizeX - 1, y, 1, gridSizeY), Texture2D.whiteTexture);
+                    // Top line
+                    GUI.DrawTexture(new Rect(x, y, gridSizeX, 1), Texture2D.whiteTexture);
+                    // Bottom line
+                    GUI.DrawTexture(new Rect(x, y + gridSizeY - 1, gridSizeX, 1), Texture2D.whiteTexture);
+                }
             }
 
             GUI.color = oldColor;
