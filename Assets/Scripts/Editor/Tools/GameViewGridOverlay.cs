@@ -32,17 +32,20 @@ namespace UnityLibrary.EditorTools
             int cellStrideX = gridSizeX + spacingX;
             int cellStrideY = gridSizeY + spacingY;
 
-            for (int y = startOffsetY; y + gridSizeY <= Screen.height; y += cellStrideY)
+            // Loop until start of the cell is beyond screen, not end of cell
+            for (int y = startOffsetY; y < Screen.height; y += cellStrideY)
             {
-                for (int x = startOffsetX; x + gridSizeX <= Screen.width; x += cellStrideX)
+                for (int x = startOffsetX; x < Screen.width; x += cellStrideX)
                 {
-                    // Left line
+                    // Draw full box even if it goes beyond screen edges
+
+                    // Left
                     GUI.DrawTexture(new Rect(x, y, 1, gridSizeY), Texture2D.whiteTexture);
-                    // Right line
+                    // Right
                     GUI.DrawTexture(new Rect(x + gridSizeX - 1, y, 1, gridSizeY), Texture2D.whiteTexture);
-                    // Top line
+                    // Top
                     GUI.DrawTexture(new Rect(x, y, gridSizeX, 1), Texture2D.whiteTexture);
-                    // Bottom line
+                    // Bottom
                     GUI.DrawTexture(new Rect(x, y + gridSizeY - 1, gridSizeX, 1), Texture2D.whiteTexture);
                 }
             }
