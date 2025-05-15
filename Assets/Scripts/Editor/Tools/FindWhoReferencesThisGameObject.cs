@@ -1,4 +1,4 @@
-// finds what scripts reference a given GameObject in the scene (in events, public fields..)
+// find what scripts reference selected GameObject in the scene (in events, public fields..)
 
 using System.Collections.Generic;
 using System.Reflection;
