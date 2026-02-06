@@ -26,7 +26,7 @@ namespace UnityLibrary
         {
             // Copies source texture into destination render texture with a shader
             // Destination RenderTexture is null to blit directly to screen
-            Graphics.Blit(displayTexture, null, mat);
+            Graphics.Blit(displayTexture, null as RenderTexture, mat);
         }
     }
 }
