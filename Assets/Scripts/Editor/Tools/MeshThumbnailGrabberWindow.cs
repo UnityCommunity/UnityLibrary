@@ -43,20 +43,94 @@ namespace UnityLibrary.Editor.Tools
             public Material[] Materials;
         }
 
-        [MenuItem("Tools/Thumbnail Grabber/Mesh Thumbnail Grabber")]
+        [MenuItem("Tools/UnityLibrary/Mesh Thumbnail Grabber")]
         public static void Open()
         {
             var win = GetWindow<MeshThumbnailGrabberWindow>("Mesh Thumbnail Grabber");
             win.minSize = new Vector2(500, 680);
         }
 
+        private const string PrefOrbitX             = "MeshThumbGrabber_OrbitX";
+        private const string PrefOrbitY             = "MeshThumbGrabber_OrbitY";
+        private const string PrefZoom               = "MeshThumbGrabber_Zoom";
+        private const string PrefCamDistMult        = "MeshThumbGrabber_CamDistMult";
+        private const string PrefLightIntensity     = "MeshThumbGrabber_LightIntensity";
+        private const string PrefOutputWidth        = "MeshThumbGrabber_OutputWidth";
+        private const string PrefOutputHeight       = "MeshThumbGrabber_OutputHeight";
+        private const string PrefBgColorR           = "MeshThumbGrabber_BgR";
+        private const string PrefBgColorG           = "MeshThumbGrabber_BgG";
+        private const string PrefBgColorB           = "MeshThumbGrabber_BgB";
+        private const string PrefBgColorA           = "MeshThumbGrabber_BgA";
+        private const string PrefAmbientColorR      = "MeshThumbGrabber_AmbR";
+        private const string PrefAmbientColorG      = "MeshThumbGrabber_AmbG";
+        private const string PrefAmbientColorB      = "MeshThumbGrabber_AmbB";
+        private const string PrefAmbientColorA      = "MeshThumbGrabber_AmbA";
+        private const string PrefLightColorR        = "MeshThumbGrabber_LightR";
+        private const string PrefLightColorG        = "MeshThumbGrabber_LightG";
+        private const string PrefLightColorB        = "MeshThumbGrabber_LightB";
+        private const string PrefLightColorA        = "MeshThumbGrabber_LightA";
+        private const string PrefDrawGround         = "MeshThumbGrabber_DrawGround";
+
+        private void LoadPrefs()
+        {
+            orbit.x                  = EditorPrefs.GetFloat(PrefOrbitX,         orbit.x);
+            orbit.y                  = EditorPrefs.GetFloat(PrefOrbitY,         orbit.y);
+            zoom                     = EditorPrefs.GetFloat(PrefZoom,            zoom);
+            cameraDistanceMultiplier = EditorPrefs.GetFloat(PrefCamDistMult,    cameraDistanceMultiplier);
+            lightIntensity           = EditorPrefs.GetFloat(PrefLightIntensity, lightIntensity);
+            outputWidth              = EditorPrefs.GetInt(PrefOutputWidth,       outputWidth);
+            outputHeight             = EditorPrefs.GetInt(PrefOutputHeight,      outputHeight);
+            backgroundColor = new Color(
+                EditorPrefs.GetFloat(PrefBgColorR, backgroundColor.r),
+                EditorPrefs.GetFloat(PrefBgColorG, backgroundColor.g),
+                EditorPrefs.GetFloat(PrefBgColorB, backgroundColor.b),
+                EditorPrefs.GetFloat(PrefBgColorA, backgroundColor.a));
+            ambientColor = new Color(
+                EditorPrefs.GetFloat(PrefAmbientColorR, ambientColor.r),
+                EditorPrefs.GetFloat(PrefAmbientColorG, ambientColor.g),
+                EditorPrefs.GetFloat(PrefAmbientColorB, ambientColor.b),
+                EditorPrefs.GetFloat(PrefAmbientColorA, ambientColor.a));
+            lightColor = new Color(
+                EditorPrefs.GetFloat(PrefLightColorR, lightColor.r),
+                EditorPrefs.GetFloat(PrefLightColorG, lightColor.g),
+                EditorPrefs.GetFloat(PrefLightColorB, lightColor.b),
+                EditorPrefs.GetFloat(PrefLightColorA, lightColor.a));
+            drawGround = EditorPrefs.GetBool(PrefDrawGround, drawGround);
+        }
+
+        private void SavePrefs()
+        {
+            EditorPrefs.SetFloat(PrefOrbitX,         orbit.x);
+            EditorPrefs.SetFloat(PrefOrbitY,         orbit.y);
+            EditorPrefs.SetFloat(PrefZoom,           zoom);
+            EditorPrefs.SetFloat(PrefCamDistMult,    cameraDistanceMultiplier);
+            EditorPrefs.SetFloat(PrefLightIntensity, lightIntensity);
+            EditorPrefs.SetInt(PrefOutputWidth,      outputWidth);
+            EditorPrefs.SetInt(PrefOutputHeight,     outputHeight);
+            EditorPrefs.SetFloat(PrefBgColorR,       backgroundColor.r);
+            EditorPrefs.SetFloat(PrefBgColorG,       backgroundColor.g);
+            EditorPrefs.SetFloat(PrefBgColorB,       backgroundColor.b);
+            EditorPrefs.SetFloat(PrefBgColorA,       backgroundColor.a);
+            EditorPrefs.SetFloat(PrefAmbientColorR,  ambientColor.r);
+            EditorPrefs.SetFloat(PrefAmbientColorG,  ambientColor.g);
+            EditorPrefs.SetFloat(PrefAmbientColorB,  ambientColor.b);
+            EditorPrefs.SetFloat(PrefAmbientColorA,  ambientColor.a);
+            EditorPrefs.SetFloat(PrefLightColorR,    lightColor.r);
+            EditorPrefs.SetFloat(PrefLightColorG,    lightColor.g);
+            EditorPrefs.SetFloat(PrefLightColorB,    lightColor.b);
+            EditorPrefs.SetFloat(PrefLightColorA,    lightColor.a);
+            EditorPrefs.SetBool(PrefDrawGround,      drawGround);
+        }
+
         private void OnEnable()
         {
+            LoadPrefs();
             CreatePreviewUtility();
         }
 
         private void OnDisable()
         {
+            SavePrefs();
             Cleanup();
         }
 
@@ -141,6 +215,7 @@ namespace UnityLibrary.Editor.Tools
                 if (EditorGUI.EndChangeCheck())
                 {
                     ClearExportPreview();
+                    SavePrefs();
                 }
 
                 zoom = EditorGUILayout.Slider("Zoom", zoom, 0.05f, 100f);
@@ -160,6 +235,7 @@ namespace UnityLibrary.Editor.Tools
 
                     CenterObjectToOrigin();
                     CacheDrawables();
+                    SavePrefs();
                     Repaint();
                 }
             }
@@ -183,6 +259,7 @@ namespace UnityLibrary.Editor.Tools
                 {
                     FitToView();
                     ClearExportPreview();
+                    SavePrefs();
                     Repaint();
                 }
 
@@ -190,6 +267,7 @@ namespace UnityLibrary.Editor.Tools
                 {
                     orbit = new Vector2(135f, -20f);
                     ClearExportPreview();
+                    SavePrefs();
                     Repaint();
                 }
 
@@ -275,12 +353,18 @@ namespace UnityLibrary.Editor.Tools
                 Repaint();
             }
 
+            if (e.type == EventType.MouseUp && e.button == 0)
+            {
+                SavePrefs();
+            }
+
             if (e.type == EventType.ScrollWheel)
             {
                 zoom *= 1f - e.delta.y * 0.08f;
                 zoom = Mathf.Clamp(zoom, 0.05f, 100f);
 
                 ClearExportPreview();
+                SavePrefs();
 
                 e.Use();
                 Repaint();
@@ -690,23 +774,37 @@ namespace UnityLibrary.Editor.Tools
                 return null;
             }
 
-            Rect rect = new Rect(0f, 0f, width, height);
+            RenderTexture rt = RenderTexture.GetTemporary(width, height, 24, RenderTextureFormat.ARGB32, RenderTextureReadWrite.sRGB);
+            RenderTexture prevActive = RenderTexture.active;
 
-            previewUtility.BeginStaticPreview(rect);
-            RenderCurrentView();
-
-            Texture2D texture = previewUtility.EndStaticPreview();
-
-            if (texture == null)
+            try
             {
-                return null;
+                // BeginPreview activates the preview scene lights; we then swap its
+                // internal RGB target for our ARGB32 RT before camera.Render() fires.
+                Rect previewRect = new Rect(0f, 0f, width, height);
+                previewUtility.BeginPreview(previewRect, GUIStyle.none);
+
+                previewUtility.camera.targetTexture = rt;
+
+                RenderCurrentView();
+
+                // EndPreview would blit its internal RT to screen – skip that and
+                // read directly from our ARGB32 RT instead.
+                previewUtility.EndPreview();
+
+                RenderTexture.active = rt;
+
+                Texture2D copy = new Texture2D(width, height, TextureFormat.RGBA32, false);
+                copy.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+                copy.Apply();
+
+                return copy;
             }
-
-            Texture2D copy = new Texture2D(texture.width, texture.height, TextureFormat.RGBA32, false);
-            copy.SetPixels(texture.GetPixels());
-            copy.Apply();
-
-            return copy;
+            finally
+            {
+                RenderTexture.active = prevActive;
+                RenderTexture.ReleaseTemporary(rt);
+            }
         }
 
         private static void PingSavedAsset(string absolutePath)
