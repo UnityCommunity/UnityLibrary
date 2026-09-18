@@ -13,8 +13,8 @@ namespace UnityLibrary.BuildTools
 {
     public static class SingleExePostProcessor
     {
-        private const string SevenZipExe = @"D:\Program Files\7-Zip\7z.exe";
-        private const string SevenZipSfx = @"D:\sdk\lzma2603\bin\7zSD.sfx";
+        private const string SevenZipExe = @"C:\Program Files\7-Zip\7z.exe";
+        private const string SevenZipSfx = @"C:\sdk\lzma2603\bin\7zSD.sfx";
 
         [PostProcessBuild(1000)]
         public static void OnPostProcessBuild(BuildTarget target, string pathToBuiltProject)
