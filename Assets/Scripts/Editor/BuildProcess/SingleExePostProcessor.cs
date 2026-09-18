@@ -1,6 +1,8 @@
 // builds single standalone exe from your Unity build (using 7-Zip SFX module)
 // Note: Change those hardcoded 7zip paths for you
 // Note: Download SDK package for the 7zSD.sfx files https://www.7-zip.org/download.html
+// Warning: This copies all build folder output there, you might not want debug symbols or other data
+// Note: You could make it customize the exe icon also (with external tool calls to create .ico from project icon and assign it)
 
 using UnityEditor;
 using UnityEditor.Callbacks;
