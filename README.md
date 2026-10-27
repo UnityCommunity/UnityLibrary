@@ -43,6 +43,7 @@ Awesome and Useful Unity Resources:
 [:book: Unity Design Patterns](https://github.com/Naphier/unity-design-patterns)
 
 [:scroll: GameDev Resources](https://github.com/Kavex/GameDev-Resources)
+[:scroll: RespawnStack](https://respawnstack.com)
 
 [:video_game: Games On GitHub](https://github.com/leereilly/games/)
 
